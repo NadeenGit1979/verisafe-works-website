@@ -8,7 +8,7 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  // A single `next start` instance serves all tests; too many parallel
+  // A single static-server instance serves all tests; too many parallel
   // browsers starve it on local machines.
   workers: 2,
   reporter: [['list']],
@@ -22,9 +22,10 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } },
     },
   ],
-  // Tests run against a production build for realistic performance and markup.
+  // Tests run against the exported static build — the same artifact Render
+  // serves in production.
   webServer: {
-    command: `pnpm build && pnpm start --port ${PORT}`,
+    command: `pnpm build && pnpm start -l ${PORT}`,
     url: BASE_URL,
     reuseExistingServer: !process.env.CI,
     timeout: 180_000,

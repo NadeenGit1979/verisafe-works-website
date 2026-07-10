@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Pure marketing site with no server-side features; export static HTML so
+  // it can be hosted on a static host (Render Static Site).
+  output: 'export',
   // Surfaces missing effect cleanups in development by double-invoking effects.
   reactStrictMode: true,
   // Type-checks every <Link href> against the real route tree.

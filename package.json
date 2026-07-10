@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build && node scripts/fix-windows-static-export.mjs",
+    "start": "serve out",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
@@ -20,7 +20,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.16.0",
-    "next": "16.2.6",
+    "next": "16.2.10",
     "react": "^19",
     "react-dom": "^19",
     "shadcn": "^4.8.0",
@@ -37,6 +37,7 @@
     "eslint-config-next": "^16.2.10",
     "postcss": "^8.5",
     "prettier": "^3.9.4",
+    "serve": "^14.2.6",
     "tailwindcss": "^4.2.0",
     "typescript": "5.7.3"
   },
