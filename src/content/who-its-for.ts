@@ -1,0 +1,72 @@
+import { Building2, Home, Wrench } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+import { siteConfig } from '@/config/site'
+import type { CtaContent } from '@/types/content'
+
+export const hero = {
+  title: 'Built for everyone on the job',
+  lede: 'One shared record means trades, maintenance teams and residents all work from the same truth — each with the tools and protection they need.',
+}
+
+export type AudienceGroup = {
+  icon: LucideIcon
+  title: string
+  intro: string
+  benefits: string[]
+  image: { src: string; alt: string }
+}
+
+export const groups: AudienceGroup[] = [
+  {
+    icon: Wrench,
+    title: 'Independent tradespeople',
+    intro: `Your reputation is your business. ${siteConfig.name} gives you proof of exactly what was agreed and done on every job.`,
+    benefits: [
+      'Evidence every job with photos, documents and audio',
+      'Settle disputes with the record, not your word against theirs',
+      'Get paid faster with clear, signed-off work',
+      'Build a portfolio of trusted, transparent jobs',
+    ],
+    image: {
+      src: '/images/hero-tradesperson.png',
+      alt: 'A tradesperson reviewing a job on a phone',
+    },
+  },
+  {
+    icon: Building2,
+    title: 'Housing maintenance teams',
+    intro:
+      'Give every operative a consistent way to log work, evidence compliance and keep residents fully informed.',
+    benefits: [
+      'Standardise how every job is recorded across the team',
+      'Evidence compliance and safety sign-offs in one place',
+      'Reduce complaints with a shared, transparent record',
+      'Hand over a complete history when contractors change',
+    ],
+    image: {
+      src: '/images/app-record.png',
+      alt: `A job record shown in the ${siteConfig.name} app`,
+    },
+  },
+  {
+    icon: Home,
+    title: 'Residents',
+    intro:
+      'Know exactly what is happening in your home. You hold the same record as the worker and your landlord.',
+    benefits: [
+      'See what was agreed before work begins',
+      'Review photos and documents of the work done',
+      'Keep a personal copy of every job in your home',
+      'Raise issues against a clear, shared timeline',
+    ],
+    image: {
+      src: '/images/resident.png',
+      alt: 'A resident welcoming a maintenance worker at their door',
+    },
+  },
+]
+
+export const cta: CtaContent = {
+  title: 'Find your place in the record',
+  description: `Whether you fix it, manage it or live in it, ${siteConfig.name} keeps everyone on the same page.`,
+}

@@ -1,0 +1,8 @@
+.next
+next-env.d.ts
+node_modules
+pnpm-lock.yaml
+playwright-report
+test-results
+public
+Screenshots V0dev Website

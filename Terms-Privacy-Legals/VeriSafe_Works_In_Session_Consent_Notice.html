@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VeriSafe Works — In-Session Consent Notice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;650;700&family=Inter:wght@400;500;600;650&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#15231F;
+  --paper:#FAF8F4;
+  --surface:#FFFFFF;
+  --accent:#0E6F5E;
+  --accent-dark:#0A4F42;
+  --line:#E2DED2;
+  --muted:#5B6661;
+  --warn-bg:#FFF7E6;
+  --warn-border:#E2B94D;
+  --warn-ink:#5C4A12;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.topbar{
+  position:sticky; top:0; z-index:30;
+  display:flex; align-items:center; gap:10px;
+  padding:14px 28px;
+  background:rgba(250,248,244,0.92);
+  backdrop-filter:saturate(140%) blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.seal{
+  width:26px; height:26px; flex:none;
+}
+.topbar .brand{
+  font-family:"Source Serif 4", Georgia, serif;
+  font-weight:600; font-size:15px; letter-spacing:0.01em;
+  color:var(--accent-dark);
+}
+.topbar .doc-tag{
+  margin-left:auto;
+  font-family:"IBM Plex Mono", monospace;
+  font-size:11.5px; color:var(--muted);
+  letter-spacing:0.04em; text-transform:uppercase;
+}
+.wrap{
+  max-width:920px;
+  margin:0 auto;
+  padding:0 28px 90px;
+  display:grid;
+  grid-template-columns:208px 1fr;
+  gap:40px;
+}
+@media (max-width: 820px){
+  .wrap{grid-template-columns:1fr;}
+  nav.toc{display:none;}
+}
+header.hero{
+  grid-column:1 / -1;
+  padding:64px 0 30px;
+  border-bottom:1px solid var(--line);
+}
+.eyebrow{
+  font-family:"IBM Plex Mono", monospace;
+  font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--accent);
+  display:flex; align-items:center; gap:8px;
+  margin-bottom:14px;
+}
+.eyebrow::before{
+  content:""; width:7px; height:7px; border-radius:50%;
+  background:var(--accent); display:inline-block;
+}
+h1{
+  font-family:"Source Serif 4", Georgia, serif;
+  font-size:clamp(30px,4vw,44px);
+  line-height:1.12;
+  margin:0 0 18px;
+  color:var(--ink);
+  font-weight:650;
+}
+h1 + p{
+  font-family:"IBM Plex Mono", monospace;
+  font-size:12.5px;
+  color:var(--muted);
+  line-height:1.9;
+  border-left:2px solid var(--line);
+  padding-left:14px;
+  margin:0;
+}
+h1 + p strong{color:var(--ink); font-weight:600;}
+nav.toc{
+  align-self:start;
+  position:sticky;
+  top:72px;
+  padding-top:38px;
+}
+nav.toc .toc-label{
+  font-family:"IBM Plex Mono", monospace;
+  font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:10px; display:block;
+}
+nav.toc ul{list-style:none; margin:0; padding:0; border-left:1px solid var(--line);}
+nav.toc li{margin:0;}
+nav.toc a{
+  display:block;
+  padding:7px 0 7px 14px;
+  font-size:13px;
+  color:var(--muted);
+  text-decoration:none;
+  border-left:2px solid transparent;
+  margin-left:-1px;
+  transition:color .15s, border-color .15s;
+}
+nav.toc a:hover{color:var(--accent-dark); border-left-color:var(--accent);}
+main{padding-top:38px; min-width:0;}
+main h2{
+  font-family:"Source Serif 4", Georgia, serif;
+  font-size:23px;
+  font-weight:650;
+  color:var(--accent-dark);
+  margin:48px 0 14px;
+  padding-left:16px;
+  border-left:3px solid var(--accent);
+  scroll-margin-top:80px;
+}
+main h2:first-of-type{margin-top:0;}
+main h3{
+  font-size:16px;
+  font-weight:700;
+  color:var(--ink);
+  margin:26px 0 8px;
+  scroll-margin-top:80px;
+}
+main p{margin:0 0 14px; color:#27352F;}
+main ul, main ol{margin:0 0 16px; padding-left:22px; color:#27352F;}
+main li{margin-bottom:6px;}
+main a{color:var(--accent-dark); text-decoration:underline; text-decoration-color:var(--line);}
+main strong{color:var(--ink); font-weight:650;}
+main em{color:var(--muted);}
+hr{border:none; border-top:1px solid var(--line); margin:36px 0;}
+blockquote{
+  margin:0 0 16px; padding:12px 18px;
+  background:var(--surface);
+  border-left:3px solid var(--line);
+  color:var(--muted);
+  font-size:14.5px;
+}
+table{
+  width:100%; border-collapse:collapse;
+  margin:0 0 22px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  font-size:14.5px;
+}
+thead tr{background:linear-gradient(90deg,var(--accent),var(--accent-dark));}
+thead th{height:6px; padding:0; border:none;}
+tbody tr:nth-child(even){background:#F6F4EE;}
+td, th{
+  padding:10px 14px;
+  border-bottom:1px solid var(--line);
+  border-right:1px solid var(--line);
+  text-align:left;
+  vertical-align:top;
+}
+td:last-child, th:last-child{border-right:none;}
+tbody tr:last-child td{border-bottom:none;}
+code{
+  font-family:"IBM Plex Mono", monospace;
+  background:#EFEAE0; padding:1px 6px; border-radius:4px; font-size:13px;
+}
+.callout{
+  margin:40px 0 0;
+  padding:18px 20px;
+  background:var(--warn-bg);
+  border:1px solid var(--warn-border);
+  border-radius:8px;
+  color:var(--warn-ink);
+  font-size:14px;
+  line-height:1.6;
+}
+.callout p{margin:0; color:var(--warn-ink);}
+.callout::before{
+  content:"⚖ Solicitor review recommended";
+  display:block;
+  font-family:"IBM Plex Mono", monospace;
+  font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+  margin-bottom:8px; color:var(--warn-ink); opacity:0.85;
+}
+footer.page-footer{
+  grid-column:1 / -1;
+  margin-top:50px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+  font-size:12.5px; color:var(--muted);
+  display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
+}
+@media print{
+  .topbar, nav.toc{display:none;}
+  .wrap{grid-template-columns:1fr; padding:0;}
+  body{background:#fff;}
+  main h2{break-after:avoid;}
+  table{break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <svg class="seal" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="24" cy="24" r="22" stroke="#0E6F5E" stroke-width="2.4"/>
+<path d="M15 24.5L21 30.5L33 17" stroke="#0E6F5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+  <span class="brand">VeriSafe Works</span>
+  <span class="doc-tag">IN SESSION CONSENT NOTICE</span>
+</div>
+<div class="wrap">
+  <header class="hero">
+    <span class="eyebrow">In-App · Consent</span>
+  </header>
+  <nav class="toc">
+    <span class="toc-label">On this page</span>
+    <div class="toc">
+<ul>
+<li><a href="#what-is-this-notice">What Is This Notice?</a></li>
+<li><a href="#what-will-be-recorded">What Will Be Recorded?</a></li>
+<li><a href="#why-is-it-being-recorded">Why Is It Being Recorded?</a></li>
+<li><a href="#your-rights">Your Rights</a></li>
+<li><a href="#who-holds-your-data">Who Holds Your Data?</a></li>
+<li><a href="#questions">Questions?</a></li>
+</ul>
+</div>
+
+  </nav>
+  <main>
+    <h1>VeriSafe Works — In-Session Consent Notice</h1>
+    <p><strong>Version:</strong> 1.0<br />
+<strong>Effective Date:</strong> 10 July 2026<br />
+<em>For display in-app, at the start of every recorded session, and as a standalone printable document.</em></p>
+<hr />
+<h2 id="what-is-this-notice">What Is This Notice?</h2>
+<p>This notice explains what VeriSafe Works records during your tradesperson's visit, why, and what happens to your data. Your tradesperson is required to inform you before any recording begins.</p>
+<hr />
+<h2 id="what-will-be-recorded">What Will Be Recorded?</h2>
+<p>During this visit, the VeriSafe Works app will record:</p>
+<ul>
+<li><strong>Audio</strong> — conversations between you and the tradesperson about the job</li>
+<li><strong>Photographs</strong> — images of the work area before work begins and after completion</li>
+<li><strong>Video</strong> — where relevant, footage of job conditions or completion</li>
+<li><strong>A transcript</strong> — a text version of the audio recording, created automatically</li>
+</ul>
+<hr />
+<h2 id="why-is-it-being-recorded">Why Is It Being Recorded?</h2>
+<p>VeriSafe Works creates a transparent, verified record of the work carried out in your home. This protects both you and the tradesperson:</p>
+<p><strong>For you (the homeowner/resident):</strong><br />
+- A clear record of exactly what was agreed<br />
+- Protection if there is ever a dispute about what was said or agreed<br />
+- A complete record of any changes to the original job scope and your approval of them<br />
+- Confirmation of job completion</p>
+<p><strong>For the tradesperson:</strong><br />
+- Protection against unfair complaints or false claims<br />
+- Proof that additional work was properly authorised by you<br />
+- Verification of professional conduct throughout the visit</p>
+<hr />
+<h2 id="your-rights">Your Rights</h2>
+<p>You have the right to:</p>
+<ul>
+<li><strong>Refuse</strong> — you may decline recording at any time before it begins. The tradesperson must respect this.</li>
+<li><strong>Stop the recording</strong> — you may ask the tradesperson to stop recording at any point during the visit.</li>
+<li><strong>Receive a copy</strong> — you will automatically receive a copy of the audio recording and transcript by email when the job is completed.</li>
+<li><strong>Request deletion</strong> — you may request that your recording be deleted by contacting privacy@verisafe.works (subject to any active dispute).</li>
+<li><strong>Access your data</strong> — you may request all data held about you by contacting privacy@verisafe.works.</li>
+</ul>
+<hr />
+<h2 id="who-holds-your-data">Who Holds Your Data?</h2>
+<p>Your data is held securely by <strong>Verisafe Software Limited</strong> (trading as "VeriSafe Works"), registered with the Information Commissioner's Office (ICO registration number ZC028351). Your recordings are:</p>
+<ul>
+<li>Encrypted at rest and in transit, and stored on secure UK/EU cloud servers, with access restricted to authorised staff for the purposes described in our Privacy Policy (e.g. delivering your transcript, resolving a dispute)</li>
+<li>Not shared with any third party except as required by law or as described in our Privacy Policy</li>
+<li>Automatically deleted after 90 days</li>
+<li>Never used for marketing or advertising</li>
+</ul>
+<hr />
+<h2 id="questions">Questions?</h2>
+<p>Contact: privacy@verisafe.works<br />
+Full Privacy Policy: available at verisafe.works/privacy</p>
+<hr />
+<div class="callout"><p>By verbally confirming your consent at the start of this session, you agree to the recording as described above.</p></div>
+  </main>
+  <footer class="page-footer">
+    <span>Verisafe Software Limited (trading as &ldquo;VeriSafe Works&rdquo;) &middot; Company No. 16649843 &middot; ICO Reg. ZC028351</span>
+    <span>75 Blackdown View, Ilminster, TA19 0BD</span>
+  </footer>
+</div>
+</body>
+</html>

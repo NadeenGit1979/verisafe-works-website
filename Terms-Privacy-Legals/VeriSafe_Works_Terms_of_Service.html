@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VeriSafe Works — Terms of Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;650;700&family=Inter:wght@400;500;600;650&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#15231F;
+  --paper:#FAF8F4;
+  --surface:#FFFFFF;
+  --accent:#0E6F5E;
+  --accent-dark:#0A4F42;
+  --line:#E2DED2;
+  --muted:#5B6661;
+  --warn-bg:#FFF7E6;
+  --warn-border:#E2B94D;
+  --warn-ink:#5C4A12;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.topbar{
+  position:sticky; top:0; z-index:30;
+  display:flex; align-items:center; gap:10px;
+  padding:14px 28px;
+  background:rgba(250,248,244,0.92);
+  backdrop-filter:saturate(140%) blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.seal{
+  width:26px; height:26px; flex:none;
+}
+.topbar .brand{
+  font-family:"Source Serif 4", Georgia, serif;
+  font-weight:600; font-size:15px; letter-spacing:0.01em;
+  color:var(--accent-dark);
+}
+.topbar .doc-tag{
+  margin-left:auto;
+  font-family:"IBM Plex Mono", monospace;
+  font-size:11.5px; color:var(--muted);
+  letter-spacing:0.04em; text-transform:uppercase;
+}
+.wrap{
+  max-width:920px;
+  margin:0 auto;
+  padding:0 28px 90px;
+  display:grid;
+  grid-template-columns:208px 1fr;
+  gap:40px;
+}
+@media (max-width: 820px){
+  .wrap{grid-template-columns:1fr;}
+  nav.toc{display:none;}
+}
+header.hero{
+  grid-column:1 / -1;
+  padding:64px 0 30px;
+  border-bottom:1px solid var(--line);
+}
+.eyebrow{
+  font-family:"IBM Plex Mono", monospace;
+  font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--accent);
+  display:flex; align-items:center; gap:8px;
+  margin-bottom:14px;
+}
+.eyebrow::before{
+  content:""; width:7px; height:7px; border-radius:50%;
+  background:var(--accent); display:inline-block;
+}
+h1{
+  font-family:"Source Serif 4", Georgia, serif;
+  font-size:clamp(30px,4vw,44px);
+  line-height:1.12;
+  margin:0 0 18px;
+  color:var(--ink);
+  font-weight:650;
+}
+h1 + p{
+  font-family:"IBM Plex Mono", monospace;
+  font-size:12.5px;
+  color:var(--muted);
+  line-height:1.9;
+  border-left:2px solid var(--line);
+  padding-left:14px;
+  margin:0;
+}
+h1 + p strong{color:var(--ink); font-weight:600;}
+nav.toc{
+  align-self:start;
+  position:sticky;
+  top:72px;
+  padding-top:38px;
+}
+nav.toc .toc-label{
+  font-family:"IBM Plex Mono", monospace;
+  font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:10px; display:block;
+}
+nav.toc ul{list-style:none; margin:0; padding:0; border-left:1px solid var(--line);}
+nav.toc li{margin:0;}
+nav.toc a{
+  display:block;
+  padding:7px 0 7px 14px;
+  font-size:13px;
+  color:var(--muted);
+  text-decoration:none;
+  border-left:2px solid transparent;
+  margin-left:-1px;
+  transition:color .15s, border-color .15s;
+}
+nav.toc a:hover{color:var(--accent-dark); border-left-color:var(--accent);}
+main{padding-top:38px; min-width:0;}
+main h2{
+  font-family:"Source Serif 4", Georgia, serif;
+  font-size:23px;
+  font-weight:650;
+  color:var(--accent-dark);
+  margin:48px 0 14px;
+  padding-left:16px;
+  border-left:3px solid var(--accent);
+  scroll-margin-top:80px;
+}
+main h2:first-of-type{margin-top:0;}
+main h3{
+  font-size:16px;
+  font-weight:700;
+  color:var(--ink);
+  margin:26px 0 8px;
+  scroll-margin-top:80px;
+}
+main p{margin:0 0 14px; color:#27352F;}
+main ul, main ol{margin:0 0 16px; padding-left:22px; color:#27352F;}
+main li{margin-bottom:6px;}
+main a{color:var(--accent-dark); text-decoration:underline; text-decoration-color:var(--line);}
+main strong{color:var(--ink); font-weight:650;}
+main em{color:var(--muted);}
+hr{border:none; border-top:1px solid var(--line); margin:36px 0;}
+blockquote{
+  margin:0 0 16px; padding:12px 18px;
+  background:var(--surface);
+  border-left:3px solid var(--line);
+  color:var(--muted);
+  font-size:14.5px;
+}
+table{
+  width:100%; border-collapse:collapse;
+  margin:0 0 22px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  font-size:14.5px;
+}
+thead tr{background:linear-gradient(90deg,var(--accent),var(--accent-dark));}
+thead th{height:6px; padding:0; border:none;}
+tbody tr:nth-child(even){background:#F6F4EE;}
+td, th{
+  padding:10px 14px;
+  border-bottom:1px solid var(--line);
+  border-right:1px solid var(--line);
+  text-align:left;
+  vertical-align:top;
+}
+td:last-child, th:last-child{border-right:none;}
+tbody tr:last-child td{border-bottom:none;}
+code{
+  font-family:"IBM Plex Mono", monospace;
+  background:#EFEAE0; padding:1px 6px; border-radius:4px; font-size:13px;
+}
+.callout{
+  margin:40px 0 0;
+  padding:18px 20px;
+  background:var(--warn-bg);
+  border:1px solid var(--warn-border);
+  border-radius:8px;
+  color:var(--warn-ink);
+  font-size:14px;
+  line-height:1.6;
+}
+.callout p{margin:0; color:var(--warn-ink);}
+.callout::before{
+  content:"⚖ Solicitor review recommended";
+  display:block;
+  font-family:"IBM Plex Mono", monospace;
+  font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+  margin-bottom:8px; color:var(--warn-ink); opacity:0.85;
+}
+footer.page-footer{
+  grid-column:1 / -1;
+  margin-top:50px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+  font-size:12.5px; color:var(--muted);
+  display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
+}
+@media print{
+  .topbar, nav.toc{display:none;}
+  .wrap{grid-template-columns:1fr; padding:0;}
+  body{background:#fff;}
+  main h2{break-after:avoid;}
+  table{break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <svg class="seal" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="24" cy="24" r="22" stroke="#0E6F5E" stroke-width="2.4"/>
+<path d="M15 24.5L21 30.5L33 17" stroke="#0E6F5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+  <span class="brand">VeriSafe Works</span>
+  <span class="doc-tag">TERMS OF SERVICE</span>
+</div>
+<div class="wrap">
+  <header class="hero">
+    <span class="eyebrow">Legal · Platform Terms</span>
+  </header>
+  <nav class="toc">
+    <span class="toc-label">On this page</span>
+    <div class="toc">
+<ul>
+<li><a href="#1-introduction-and-acceptance">1. Introduction and Acceptance</a></li>
+<li><a href="#2-definitions">2. Definitions</a></li>
+<li><a href="#3-eligibility">3. Eligibility</a></li>
+<li><a href="#4-account-registration-workers">4. Account Registration (Workers)</a></li>
+<li><a href="#5-the-verisafe-works-service">5. The VeriSafe Works Service</a></li>
+<li><a href="#6-consent-requirements-critical-obligations">6. Consent Requirements — Critical Obligations</a></li>
+<li><a href="#7-acceptable-use">7. Acceptable Use</a></li>
+<li><a href="#8-intellectual-property">8. Intellectual Property</a></li>
+<li><a href="#9-subscription-and-payments">9. Subscription and Payments</a></li>
+<li><a href="#10-limitation-of-liability">10. Limitation of Liability</a></li>
+<li><a href="#11-indemnification">11. Indemnification</a></li>
+<li><a href="#12-termination">12. Termination</a></li>
+<li><a href="#13-governing-law-and-disputes">13. Governing Law and Disputes</a></li>
+<li><a href="#14-changes-to-these-terms">14. Changes to These Terms</a></li>
+<li><a href="#15-contact">15. Contact</a></li>
+</ul>
+</div>
+
+  </nav>
+  <main>
+    <h1>VeriSafe Works — Terms of Service</h1>
+    <p><strong>Effective Date:</strong> 10 July 2026<br />
+<strong>Last Updated:</strong> 10 July 2026<br />
+<strong>Version:</strong> 1.0</p>
+<hr />
+<h2 id="1-introduction-and-acceptance">1. Introduction and Acceptance</h2>
+<p>These Terms of Service ("Terms") govern your access to and use of the VeriSafe Works mobile application ("the App"), operated by <strong>Verisafe Software Limited</strong> ("we", "us", "our"), trading as "VeriSafe Works", a company registered in England and Wales.</p>
+<p>By downloading, installing or using the App, you agree to be bound by these Terms. If you do not agree, you must not use the App.</p>
+<p>These Terms should be read alongside our Privacy Policy (including its data retention provisions) and In-Session Consent Notice, both of which form part of our agreement with you.</p>
+<p><strong>Data Controller:</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Company</td>
+<td>Verisafe Software Limited (trading as "VeriSafe Works")</td>
+</tr>
+<tr>
+<td>Registered Address</td>
+<td>75 Blackdown View, Ilminster, TA19 0BD</td>
+</tr>
+<tr>
+<td>Company Registration Number</td>
+<td>16649843</td>
+</tr>
+<tr>
+<td>ICO Registration Number</td>
+<td>ZC028351</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>legal@verisafe.works</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-definitions">2. Definitions</h2>
+<ul>
+<li><strong>"App"</strong> means the VeriSafe Works mobile application available on the Google Play Store and Apple App Store</li>
+<li><strong>"Worker"</strong> means a tradesperson or contractor who uses the App to record job sessions</li>
+<li><strong>"Customer"</strong> means a homeowner or resident in whose property the App is used</li>
+<li><strong>"Session"</strong> means a recorded interaction between a Worker and Customer via the App</li>
+<li><strong>"Recording"</strong> means any audio, video, photograph or transcript captured during a Session</li>
+<li><strong>"Platform"</strong> means the App, backend systems, API and associated services collectively</li>
+</ul>
+<hr />
+<h2 id="3-eligibility">3. Eligibility</h2>
+<p>You must be at least 18 years of age to use VeriSafe Works. By creating an account, you confirm that:</p>
+<ul>
+<li>You are at least 18 years old</li>
+<li>You have the legal capacity to enter into a binding contract</li>
+<li>You are either a registered tradesperson (Worker) or a homeowner/resident (Customer)</li>
+<li>All information you provide is accurate and truthful</li>
+</ul>
+<hr />
+<h2 id="4-account-registration-workers">4. Account Registration (Workers)</h2>
+<p>Workers must register an account to use the App. You agree to:</p>
+<ul>
+<li>Provide accurate, current and complete registration information</li>
+<li>Keep your account credentials secure and confidential</li>
+<li>Notify us immediately of any unauthorised access to your account</li>
+<li>Not share your account with any other person</li>
+<li>Not impersonate any other person or trade under a false identity</li>
+</ul>
+<p>We reserve the right to suspend or terminate accounts that breach these requirements.</p>
+<hr />
+<h2 id="5-the-verisafe-works-service">5. The VeriSafe Works Service</h2>
+<h3 id="51-what-the-app-does">5.1 What the App Does</h3>
+<p>VeriSafe Works provides a structured recording and verification platform that:</p>
+<ul>
+<li>Records arrival confirmation and job commencement</li>
+<li>Captures Customer acknowledgement that the Worker has advised use of the App</li>
+<li>Records any changes to job scope, including Customer approval of additional labour and parts</li>
+<li>Documents job completion confirmation</li>
+<li>Delivers a copy of the audio recording and transcript to the Customer upon job completion</li>
+</ul>
+<h3 id="52-what-the-app-does-not-do">5.2 What the App Does Not Do</h3>
+<ul>
+<li>VeriSafe Works is not a legal service and does not provide legal advice</li>
+<li>Recordings are provided as factual records — we make no warranty as to their admissibility in any legal proceeding</li>
+<li>We are not a dispute resolution service — we provide evidence, not decisions</li>
+<li>We do not verify the identity, qualifications or licensing of Workers</li>
+</ul>
+<hr />
+<h2 id="6-consent-requirements-critical-obligations">6. Consent Requirements — Critical Obligations</h2>
+<h3 id="61-worker-obligations">6.1 Worker Obligations</h3>
+<p>Before commencing any recording, the Worker must:</p>
+<ol>
+<li>Inform the Customer that VeriSafe Works will be used during the visit</li>
+<li>Explain that the purpose is mutual protection and transparency</li>
+<li>Obtain the Customer's verbal consent to be recorded (this verbal consent will itself be recorded as the opening of the Session)</li>
+<li>Confirm Customer consent via the in-App confirmation screen</li>
+<li>Ensure all persons present in the property are made aware a recording is taking place</li>
+</ol>
+<p>Failure to obtain proper consent before recording is a serious breach of these Terms. Depending on the circumstances, it may also expose the Worker to legal and regulatory consequences under UK data protection law (including the UK GDPR and the Data Protection Act 2018) and other applicable privacy legislation. <em>We recommend the Worker treats consent as mandatory in every case — VeriSafe Works does not provide legal advice on the consequences of non-compliance in any specific situation.</em></p>
+<h3 id="62-customer-rights-during-a-session">6.2 Customer Rights During a Session</h3>
+<p>Customers may at any time:</p>
+<ul>
+<li>Ask the Worker to pause or stop the recording</li>
+<li>Withdraw their consent to ongoing recording</li>
+<li>Request that the session recording be deleted (subject to any active dispute)</li>
+</ul>
+<h3 id="63-recordings-in-shared-or-rented-properties">6.3 Recordings in Shared or Rented Properties</h3>
+<p>Where the Customer is a tenant rather than the property owner, the Worker must ensure the tenant has authority to consent to recording within that property.</p>
+<hr />
+<h2 id="7-acceptable-use">7. Acceptable Use</h2>
+<p>You agree not to use the App to:</p>
+<ul>
+<li>Record any person without their explicit prior consent</li>
+<li>Capture recordings for any purpose other than the legitimate job verification purposes described in these Terms</li>
+<li>Harass, threaten, intimidate or coerce any person</li>
+<li>Record in any location where recording is prohibited by law</li>
+<li>Share recordings with any third party other than as permitted by these Terms</li>
+<li>Use the App for any unlawful, fraudulent or malicious purpose</li>
+<li>Attempt to access, modify or interfere with the App's backend systems or API</li>
+<li>Upload or transmit any malware, viruses or harmful code</li>
+<li>Circumvent any technical or security measures within the App</li>
+</ul>
+<hr />
+<h2 id="8-intellectual-property">8. Intellectual Property</h2>
+<h3 id="81-our-ip">8.1 Our IP</h3>
+<p>All intellectual property in the App, including but not limited to the software, design, branding, trademarks, logos and content, is owned by or licensed to Verisafe Software Limited. You may not copy, modify, distribute, sell or reverse engineer any part of the App.</p>
+<h3 id="82-your-recordings">8.2 Your Recordings</h3>
+<p>You retain ownership of the specific content captured in your recordings (e.g. the conversation itself). By using the App, you grant us a limited, non-exclusive licence to store, process and transmit your recordings solely for the purpose of providing the Service.</p>
+<p>We do not claim ownership of your recordings and will not use them for any purpose beyond service delivery and legal compliance.</p>
+<hr />
+<h2 id="9-subscription-and-payments">9. Subscription and Payments</h2>
+<h3 id="91-free-tier">9.1 Free Tier</h3>
+<p>VeriSafe Works may offer a free tier with limited functionality as described in the App at the time of use.</p>
+<h3 id="92-paid-subscriptions">9.2 Paid Subscriptions</h3>
+<p>Premium features are available via subscription plans as listed in the App. Subscriptions are:</p>
+<ul>
+<li>Billed in advance on a monthly or annual basis</li>
+<li>Automatically renewed unless cancelled before the renewal date</li>
+<li>Non-refundable except where required by law</li>
+</ul>
+<h3 id="93-cancellation">9.3 Cancellation</h3>
+<p>You may cancel your subscription at any time. Cancellation takes effect at the end of the current billing period. You will retain access to premium features until that date.</p>
+<h3 id="94-price-changes">9.4 Price Changes</h3>
+<p>We will give at least 30 days' notice of any price changes before they take effect.</p>
+<hr />
+<h2 id="10-limitation-of-liability">10. Limitation of Liability</h2>
+<p>To the fullest extent permitted by law:</p>
+<ul>
+<li>We provide the App on an "as is" basis and make no warranties as to its fitness for any particular purpose</li>
+<li>We are not liable for any loss of data, business interruption, or indirect or consequential loss arising from your use of the App</li>
+<li>Our total liability to you in respect of any claim shall not exceed the total fees paid by you in the 12 months preceding the claim</li>
+<li>We are not liable for the conduct of any Worker or Customer using the App</li>
+</ul>
+<p>Nothing in these Terms limits our liability for death or personal injury caused by our negligence, fraud, or any other liability that cannot be excluded by law.</p>
+<hr />
+<h2 id="11-indemnification">11. Indemnification</h2>
+<p>You agree to indemnify and hold harmless Verisafe Software Limited, its officers, directors, employees and contractors from any claims, damages, costs or expenses (including legal fees) arising from:</p>
+<ul>
+<li>Your breach of these Terms</li>
+<li>Your failure to obtain proper consent before recording</li>
+<li>Your misuse of recordings obtained through the App</li>
+<li>Any third-party claim arising from your use of the App</li>
+</ul>
+<hr />
+<h2 id="12-termination">12. Termination</h2>
+<p>We may suspend or terminate your access to the App immediately and without notice if you:</p>
+<ul>
+<li>Breach these Terms or our Privacy Policy</li>
+<li>Use the App for any unlawful purpose</li>
+<li>Record without consent</li>
+<li>Provide false registration information</li>
+</ul>
+<p>Upon termination, your right to use the App ceases immediately. We will handle your data in accordance with the retention periods set out in our Privacy Policy. Where you request account deletion, personal data is permanently deleted within 30 days of the request, except where a longer statutory retention period applies.</p>
+<hr />
+<h2 id="13-governing-law-and-disputes">13. Governing Law and Disputes</h2>
+<p>These Terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+<p>We encourage you to contact us at legal@verisafe.works before initiating any formal dispute — most issues can be resolved quickly and informally.</p>
+<hr />
+<h2 id="14-changes-to-these-terms">14. Changes to These Terms</h2>
+<p>We may update these Terms from time to time. We will notify you of material changes via in-app notification and email at least 14 days before the changes take effect. Continued use of the App after that date constitutes acceptance.</p>
+<hr />
+<h2 id="15-contact">15. Contact</h2>
+<p><strong>Verisafe Software Limited</strong> (trading as "VeriSafe Works")<br />
+Email: legal@verisafe.works<br />
+Post: 75 Blackdown View, Ilminster, TA19 0BD<br />
+Company Registration Number: 16649843</p>
+<hr />
+<div class="callout"><p>These Terms of Service are provided as a professionally drafted template and do not constitute legal advice. We recommend a qualified solicitor reviews these Terms — particularly Sections 6, 10 and 11 — before publication, given the legal consequences attached to consent failures and liability exclusions.</p></div>
+  </main>
+  <footer class="page-footer">
+    <span>Verisafe Software Limited (trading as &ldquo;VeriSafe Works&rdquo;) &middot; Company No. 16649843 &middot; ICO Reg. ZC028351</span>
+    <span>75 Blackdown View, Ilminster, TA19 0BD</span>
+  </footer>
+</div>
+</body>
+</html>
