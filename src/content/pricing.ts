@@ -18,7 +18,7 @@ export const plans: Plan[] = [
   {
     name: 'Independent Tradesperson',
     price: '£12',
-    period: '/month',
+    period: '/Month',
     description: 'For independent tradespeople protecting every job.',
     features: [
       'Unlimited job records',
