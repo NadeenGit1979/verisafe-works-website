@@ -9,9 +9,9 @@ export const siteConfig = {
   description:
     'VeriSafe Works keeps a complete, shared record of every job — documents, photos and audio conversations — for tradespeople, housing association maintenance teams and the residents they work for.',
   contact: {
-    email: 'hello@verisafe.works',
-    phone: '+44 (0)20 7946 0000',
-    office: 'London, United Kingdom',
+    email: 'info@verisafe.works',
+    phone: '01460 595339',
+    office: United Kingdom',
   },
   /** Registered legal entity details, used by the legal documents. */
   legal: {
@@ -19,7 +19,7 @@ export const siteConfig = {
     registeredAddress: '75 Blackdown View, Ilminster, TA19 0BD',
     companyNumber: '16649843',
     icoNumber: 'ZC028351',
-    email: 'legal@verisafe.works',
+    email: 'info@verisafe.works',
   },
   /**
    * The product is in its test phase — nothing is for sale yet. Every
