@@ -34,9 +34,9 @@ export const groups: AudienceGroup[] = [
   },
   {
     icon: Building2,
-    title: 'Housing maintenance teams',
+    title: 'Maintenance Providers',
     intro:
-      'Give every operative a consistent way to log work, evidence compliance and keep residents fully informed.',
+      'Give everyone on your team a consistent way to log work, evidence compliance and keep residents fully informed.',
     benefits: [
       'Standardise how every job is recorded across the team',
       'Evidence compliance and safety sign-offs in one place',
@@ -52,12 +52,12 @@ export const groups: AudienceGroup[] = [
     icon: Home,
     title: 'Residents',
     intro:
-      'Know exactly what is happening in your home. You hold the same record as the worker and your landlord.',
+      'Know exactly what is happening in your home. You hold the same record as the people working for you.',
     benefits: [
       'See what was agreed before work begins',
-      'Review photos and documents of the work done',
+      'Have agreed job changes documented in real time',
       'Keep a personal copy of every job in your home',
-      'Raise issues against a clear, shared timeline',
+      'Resolve issues quickly with a clear, identical timeline',
     ],
     image: {
       src: '/images/resident.png',
