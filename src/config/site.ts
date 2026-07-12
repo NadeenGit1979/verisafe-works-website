@@ -11,7 +11,7 @@ export const siteConfig = {
   contact: {
     email: 'info@verisafe.works',
     phone: '01460 595339',
-    office: United Kingdom',
+    office: 'United Kingdom',
   },
   /** Registered legal entity details, used by the legal documents. */
   legal: {
