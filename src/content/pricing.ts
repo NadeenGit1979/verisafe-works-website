@@ -16,15 +16,15 @@ export type Plan = {
 
 export const plans: Plan[] = [
   {
-    name: 'Sole Trader',
+    name: 'Independent Tradesperson',
     price: '£12',
     period: '/month',
     description: 'For independent tradespeople protecting every job.',
     features: [
       'Unlimited job records',
       'Documents, photos & audio capture',
-      'Shared resident copies',
-      'Tamper-evident timeline',
+      'Secure encrypted storage',
+      'Digital sign off'
       'Email support',
     ],
     cta: 'Coming soon',
@@ -34,9 +34,9 @@ export const plans: Plan[] = [
     name: 'Team',
     price: '£9',
     period: '/user/month',
-    description: 'For maintenance teams that need consistency across operatives.',
+    description: 'Consistent job tracking for teams of contractors.',
     features: [
-      'Everything in Sole Trader',
+      'All Independent Trader's features',
       'Up to 25 team members',
       'Compliance & sign-off tracking',
       'Shared property history',
@@ -47,7 +47,7 @@ export const plans: Plan[] = [
     featured: true,
   },
   {
-    name: 'Housing Association',
+    name: 'Maintenance Providers',
     price: 'Custom',
     period: '',
     description: 'For associations managing maintenance at scale.',
