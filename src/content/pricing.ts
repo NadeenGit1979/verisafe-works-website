@@ -24,7 +24,7 @@ export const plans: Plan[] = [
       'Unlimited job records',
       'Documents, photos & audio capture',
       'Secure encrypted storage',
-      'Digital sign off'
+      'Digital sign off',
       'Email support',
     ],
     cta: 'Coming soon',
