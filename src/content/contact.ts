@@ -19,9 +19,9 @@ export const contactMethods: Feature[] = [
 ]
 
 export const roles = [
-  'Independent tradesperson',
-  'Maintenance team',
-  'Housing association',
+  'Independent Tradesperson',
+  'Trades Firm',
+  'Maintenance Provider',
   'Resident',
   'Other',
 ]
