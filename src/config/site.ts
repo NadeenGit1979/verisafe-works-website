@@ -7,7 +7,7 @@ export const siteConfig = {
   tagline: 'Trust Through Transparency',
   title: 'VeriSafe Works — Trust Through Transparency for Every Job',
   description:
-    'VeriSafe Works keeps a complete, shared record of every job — documents, photos and audio conversations — for tradespeople, housing association maintenance teams and the residents they work for.',
+    'VeriSafe Works keeps a complete, shared record of every job — documents, photos and audio conversations — for tradespeople, maintenance providers and the residents they work for.',
   contact: {
     email: 'info@verisafe.works',
     phone: '01460 595339',
