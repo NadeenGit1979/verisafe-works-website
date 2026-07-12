@@ -8,7 +8,7 @@ export const hero = {
   lede: `${siteConfig.name} keeps a complete, identical record of all documents, images and audio conversations for each job — held by the resident, the worker and, if applicable, the worker's employer.`,
   primaryCta: siteConfig.cta.primary,
   secondaryCta: 'See how it works',
-  trustItems: [],
+  
   image: {
     src: '/images/hero-tradesperson.png',
     alt: 'A tradesperson reviewing a job record on a smartphone in a home',
