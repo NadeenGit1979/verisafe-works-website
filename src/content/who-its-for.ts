@@ -19,7 +19,7 @@ export type AudienceGroup = {
 export const groups: AudienceGroup[] = [
   {
     icon: Wrench,
-    title: 'Independent tradespeople',
+    title: 'Independent Tradespeople',
     intro: `Your reputation is your business. ${siteConfig.name} gives you proof of exactly what was agreed and done on every job.`,
     benefits: [
       'Evidence every job with photos, documents and audio',

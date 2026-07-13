@@ -100,13 +100,13 @@ export const audienceSection = {
 export const audiences: Feature[] = [
   {
     icon: Wrench,
-    title: 'Independent tradespeople',
+    title: 'Independent Tradespeople',
     description:
       'Protect your reputation with proof of every job and get paid faster with disputes settled by the record.',
   },
   {
     icon: Building2,
-    title: 'Housing maintenance teams',
+    title: 'Maintenance Teams',
     description:
       'Give every operative a consistent way to log work, evidence compliance and keep residents informed.',
   },
@@ -114,7 +114,7 @@ export const audiences: Feature[] = [
     icon: Home,
     title: 'Residents',
     description:
-      'See exactly what was agreed and done in your home, with the same record the worker and landlord hold.',
+      "See a record of what's been agreed and done in your home; identical to the one held by the people doing the work.",
   },
 ]
 
