@@ -16,6 +16,11 @@ const poppins = Poppins({
   weight: ['500', '600', '700', '800'],
 })
 
+// Busts the browsers' sticky favicon cache; bump whenever the icon artwork
+// (public/icon-32x32.png / apple-icon.png, from scripts/generate-favicons.ps1)
+// changes.
+const faviconVersion = 2
+
 export const metadata: Metadata = {
   metadataBase: new URL(env.siteUrl),
   title: {
@@ -30,9 +35,8 @@ export const metadata: Metadata = {
     description: siteConfig.description,
   },
   icons: {
-    // Derived from public/logo.png by scripts/extract-logo-mark.ps1.
-    icon: [{ url: '/icon-32x32.png', sizes: '32x32', type: 'image/png' }],
-    apple: '/apple-icon.png',
+    icon: [{ url: `/icon-32x32.png?v=${faviconVersion}`, sizes: '32x32', type: 'image/png' }],
+    apple: `/apple-icon.png?v=${faviconVersion}`,
   },
 }
 

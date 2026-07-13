@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { CheckCircle2, ShieldCheck } from 'lucide-react'
+import { ShieldCheck } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -27,14 +27,6 @@ export function HomeHero() {
             <Button render={<Link href={ROUTES.howItWorks} />} size="lg" variant="outline">
               {hero.secondaryCta}
             </Button>
-          </div>
-          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
-            {hero.trustItems.map((item) => (
-              <span key={item} className="inline-flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-primary" aria-hidden="true" />
-                {item}
-              </span>
-            ))}
           </div>
         </div>
 

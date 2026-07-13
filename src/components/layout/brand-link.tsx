@@ -11,7 +11,14 @@ export function BrandLink() {
 
   return (
     <Link href={ROUTES.home} className="flex items-center gap-2">
-      <Image src="/logo-mark.png" alt="" width={36} height={36} className="h-9 w-9" priority />
+      <Image
+        src="/logo-mark-new.png"
+        alt=""
+        width={36}
+        height={36}
+        className="h-9 w-9 rounded-full"
+        priority
+      />
       <span className="font-heading text-lg font-bold tracking-tight">
         <span className="text-primary">{first}</span>{' '}
         <span className="text-foreground">{rest.join(' ')}</span>

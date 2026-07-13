@@ -1,0 +1,31 @@
+# One-off asset pipeline: regenerates the favicons from the clean logo mark
+# (public/logo-mark-new.png), cropped to a circle to match how BrandLink
+# renders the mark (rounded-full).
+# Run from the repo root:  powershell -File scripts/generate-favicons.ps1
+$ErrorActionPreference = 'Stop'
+Add-Type -AssemblyName System.Drawing
+
+function Save-CircularIcon([System.Drawing.Bitmap]$src, [string]$path, [int]$size) {
+  $bmp = New-Object System.Drawing.Bitmap($size, $size, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+  $g = [System.Drawing.Graphics]::FromImage($bmp)
+  $g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
+  $g.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+  $g.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality
+  # Fill an antialiased circle with the scaled mark as its texture, so the
+  # icon edge stays smooth at small sizes.
+  $scaled = New-Object System.Drawing.Bitmap($src, $size, $size)
+  $brush = New-Object System.Drawing.TextureBrush($scaled)
+  $g.FillEllipse($brush, 0, 0, $size, $size)
+  $g.Dispose()
+  $brush.Dispose()
+  $scaled.Dispose()
+  $bmp.Save($path, [System.Drawing.Imaging.ImageFormat]::Png)
+  $bmp.Dispose()
+  Write-Output "wrote $path (${size}x${size})"
+}
+
+$public = Join-Path $PSScriptRoot '..\public'
+$src = New-Object System.Drawing.Bitmap((Join-Path $public 'logo-mark-new.png'))
+Save-CircularIcon $src (Join-Path $public 'icon-32x32.png') 32
+Save-CircularIcon $src (Join-Path $public 'apple-icon.png') 180
+$src.Dispose()

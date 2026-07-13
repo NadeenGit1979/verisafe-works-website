@@ -36,7 +36,7 @@ export const plans: Plan[] = [
     period: '/user/month',
     description: 'Consistent job tracking for teams of contractors.',
     features: [
-      'All Independent Trader's features',
+      "All Independent Tradesperson's features",
       'Up to 25 team members',
       'Compliance & sign-off tracking',
       'Shared property history',
