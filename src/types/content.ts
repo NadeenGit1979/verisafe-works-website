@@ -26,6 +26,22 @@ export type CtaContent = {
   description: string
 }
 
+/** The hero strip counting down to the test-phase launch. */
+export type LaunchCountdown = {
+  /** ISO-8601 moment the test phase opens. */
+  target: string
+  eyebrow: string
+  /** Compact stamp shown in the strip header, e.g. '20 Jul 2026 · 09:00'. */
+  dateStamp: string
+  /** Static sentence read to screen readers in place of the ticking digits. */
+  accessibleSummary: string
+  /** External sign-up form the date stamp links to. */
+  signUp: { href: string; ariaLabel: string }
+  units: { days: string; hours: string; minutes: string; seconds: string }
+  /** Shown in place of the digits once the target moment has passed. */
+  liveLabel: string
+}
+
 /** One block of flowing legal copy. */
 export type LegalBlock =
   | { kind: 'paragraph'; text: string }

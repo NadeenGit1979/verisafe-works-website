@@ -19,7 +19,7 @@ const poppins = Poppins({
 // Busts the browsers' sticky favicon cache; bump whenever the icon artwork
 // (public/icon-32x32.png / apple-icon.png, from scripts/generate-favicons.ps1)
 // changes.
-const faviconVersion = 2
+const faviconVersion = 3
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.siteUrl),
@@ -47,8 +47,8 @@ const themeInitScript = `try{var t=localStorage.getItem('theme');if(t!=='light'&
 export const viewport: Viewport = {
   colorScheme: 'light dark',
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#1a2b48' },
   ],
 }
 

@@ -1,6 +1,6 @@
 import { AudioLines, Building2, FileText, Home, ImageIcon, Wrench } from 'lucide-react'
 import { siteConfig } from '@/config/site'
-import type { CtaContent, Feature, Stat, Step } from '@/types/content'
+import type { CtaContent, Feature, LaunchCountdown, Stat, Step } from '@/types/content'
 
 export const hero = {
   badge: siteConfig.tagline,
@@ -12,6 +12,19 @@ export const hero = {
     src: '/images/hero-tradesperson.png',
     alt: 'A tradesperson reviewing a job record on a smartphone in a home',
   },
+}
+
+export const launchCountdown: LaunchCountdown = {
+  target: '2026-07-20T09:00:00+01:00',
+  eyebrow: 'Test phase opens',
+  dateStamp: '20 Jul 2026 · 09:00',
+  accessibleSummary: 'The test phase opens on 20 July 2026 at 9:00am UK time.',
+  signUp: {
+    href: siteConfig.cta.href,
+    ariaLabel: 'Register for the test phase — opens a Google Form in a new tab',
+  },
+  units: { days: 'days', hours: 'hours', minutes: 'min', seconds: 'sec' },
+  liveLabel: 'The test phase is now open to early testers.',
 }
 
 export const stats: Stat[] = [

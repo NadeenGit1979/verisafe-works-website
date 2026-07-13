@@ -29,5 +29,7 @@ export const siteConfig = {
   cta: {
     primary: 'Get early access',
     secondary: 'Become a tester',
+    /** Test-phase sign-up form (Google Form) every early-access CTA opens. */
+    href: 'https://forms.gle/oBtLxnfLJZXQHVxj8',
   },
 } as const

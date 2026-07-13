@@ -1,13 +1,12 @@
 'use client'
 
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useCallback, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
 import { NavLink } from '@/components/layout/nav-link'
 import { Button } from '@/components/ui/button'
-import { MAIN_NAV, ROUTES } from '@/config/navigation'
+import { MAIN_NAV } from '@/config/navigation'
 import { siteConfig } from '@/config/site'
 import { useEscapeKey } from '@/hooks/use-escape-key'
 import { useScrollLock } from '@/hooks/use-scroll-lock'
@@ -47,7 +46,17 @@ export function MobileNav() {
             {MAIN_NAV.map((link) => (
               <NavLink key={link.href} {...link} variant="mobile" onNavigate={close} />
             ))}
-            <Button render={<Link href={ROUTES.contact} onClick={close} />} className="mt-2">
+            <Button
+              render={
+                <a
+                  href={siteConfig.cta.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={close}
+                />
+              }
+              className="mt-2"
+            >
               {siteConfig.cta.primary}
             </Button>
           </nav>

@@ -19,7 +19,11 @@ export function CtaSection({ title, description }: CtaContent) {
             {description}
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button render={<Link href={ROUTES.contact} />} size="lg" variant="secondary">
+            <Button
+              render={<a href={siteConfig.cta.href} target="_blank" rel="noopener noreferrer" />}
+              size="lg"
+              variant="amber"
+            >
               {siteConfig.cta.primary}
             </Button>
             <Button
