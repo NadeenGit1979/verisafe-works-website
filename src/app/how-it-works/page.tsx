@@ -10,7 +10,7 @@ import { cta, flow, guarantees, guaranteesSection, hero } from '@/content/how-it
 
 export const metadata: Metadata = {
   title: 'How it works',
-  description: `See how ${siteConfig.name} captures documents, images and audio into one shared, tamper-evident record for every job.`,
+  description: `See how ${siteConfig.name} captures documents, images and audio into one shared, Tamper-Proof record for every job.`,
 }
 
 export default function HowItWorksPage() {

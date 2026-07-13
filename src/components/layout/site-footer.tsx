@@ -12,7 +12,7 @@ export function SiteFooter() {
         <div className="max-w-xs">
           <BrandLink />
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            One shared, tamper-evident record of every job — built for tradespeople, maintenance
+            One shared, Tamper-Proof record of every job — built for tradespeople, maintenance
             teams and the residents they work for.
           </p>
         </div>

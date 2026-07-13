@@ -52,7 +52,7 @@ export const guaranteesSection = {
 export const guarantees: Feature[] = [
   {
     icon: Fingerprint,
-    title: 'Tamper-evident',
+    title: 'Tamper-Proof',
     description:
       'Every entry is fingerprinted and timestamped, so the record can be trusted as a true account.',
   },

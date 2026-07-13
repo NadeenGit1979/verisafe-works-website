@@ -87,7 +87,7 @@ export const workflowSteps: Step[] = [
     number: '03',
     title: 'Share one truth',
     description:
-      'Customer, worker and employer all hold an identical, tamper-evident copy when the job closes.',
+      'Customer, worker and employer all hold an identical, Tamper-Proof copy when the job closes.',
   },
 ]
 
