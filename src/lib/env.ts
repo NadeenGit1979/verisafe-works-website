@@ -13,4 +13,10 @@ export const env = {
   isProduction: process.env.NODE_ENV === 'production',
   /** True when building/running on Vercel; its analytics script only exists there. */
   isVercel: process.env.VERCEL === '1',
+  /**
+   * Web3Forms access key for the contact form. Public by design (Web3Forms
+   * treats it as an identifier, not a secret) but inlined at build time, so it
+   * must be set in the host's build environment, not just at runtime.
+   */
+  web3formsKey: process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? '',
 } as const

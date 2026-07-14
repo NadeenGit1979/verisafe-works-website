@@ -84,5 +84,28 @@ test('contact form is present with all fields', async ({ page }) => {
   await expect(page.getByLabel('Email')).toBeVisible()
   await expect(page.getByLabel('I am a…')).toBeVisible()
   await expect(page.getByLabel('Message')).toBeVisible()
+  await expect(page.getByText('0/5000')).toBeVisible()
   await expect(page.getByRole('button', { name: 'Send message' })).toBeVisible()
+})
+
+test('optional answer field appears only for the Other role and clears on reselect', async ({
+  page,
+}) => {
+  await page.goto('/contact')
+  const roleSelect = page.getByLabel('I am a…')
+
+  await expect(page.getByLabel('Optional Answer')).toHaveCount(0)
+
+  await roleSelect.selectOption('Other')
+  const optionalAnswer = page.getByLabel('Optional Answer')
+  await expect(optionalAnswer).toBeVisible()
+  await expect(page.getByText('0/200')).toBeVisible()
+  await optionalAnswer.fill('Housing association')
+  await expect(page.getByText('19/200')).toBeVisible()
+
+  await roleSelect.selectOption('Resident')
+  await expect(page.getByLabel('Optional Answer')).toHaveCount(0)
+
+  await roleSelect.selectOption('Other')
+  await expect(page.getByLabel('Optional Answer')).toHaveValue('')
 })

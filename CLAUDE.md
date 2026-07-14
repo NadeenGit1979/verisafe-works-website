@@ -57,6 +57,9 @@ pnpm lint && pnpm typecheck && pnpm build && pnpm test:e2e
 
 ## Known intentional gaps
 
-- Contact form submit opens the visitor's mail app via `mailto:` with the
-  form fields prefilled (`ContactForm`) until a backend exists. Do not fake
-  an in-app success state.
+- Contact form posts to Web3Forms (free tier, 250 submissions/month) — no
+  backend of our own. The access key is `NEXT_PUBLIC_WEB3FORMS_KEY`, public by
+  design but inlined at build time, so it must be set in Render's build
+  environment. Spam is handled by the hidden `botcheck` honeypot plus
+  Web3Forms' server-side filtering; success/error states are real, driven by
+  the API response.
