@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["H4U595BGQB.com.verisafe.works"],
+        "components": [
+          {
+            "/": "/accept-invitation*",
+            "comment": "Job invitation links — opens the VeriSafe Works app's AcceptInvitation screen. Other site paths stay in the browser."
+          }
+        ]
+      }
+    ]
+  }
+}
