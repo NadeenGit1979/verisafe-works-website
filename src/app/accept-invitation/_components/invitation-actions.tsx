@@ -1,11 +1,11 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
-import { AlertTriangle, Smartphone } from 'lucide-react'
+import { AlertTriangle, Download, Smartphone } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { siteConfig } from '@/config/site'
-import { invalidLink, noApp, openApp } from '@/content/accept-invitation'
+import { download, invalidLink, noApp, openApp } from '@/content/accept-invitation'
 
 /**
  * Client leaf: the invitation token only exists in the browser's query string
@@ -43,6 +43,27 @@ export function InvitationActions() {
       <p className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-muted-foreground">
         {openApp.hint}
       </p>
+
+      <div className="mx-auto mt-6 flex max-w-xl flex-wrap justify-center gap-3">
+        <Button
+          render={
+            <a href={siteConfig.appDownloads.android} target="_blank" rel="noopener noreferrer" />
+          }
+          variant="outline"
+        >
+          <Download aria-hidden />
+          {download.android}
+        </Button>
+        <Button
+          render={
+            <a href={siteConfig.appDownloads.ios} target="_blank" rel="noopener noreferrer" />
+          }
+          variant="outline"
+        >
+          <Download aria-hidden />
+          {download.ios}
+        </Button>
+      </div>
 
       <div className="mx-auto mt-10 max-w-xl rounded-3xl border border-border bg-secondary/40 px-6 py-8">
         <h2 className="font-heading text-xl font-bold tracking-tight text-foreground">
