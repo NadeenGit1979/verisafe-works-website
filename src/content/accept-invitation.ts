@@ -18,6 +18,11 @@ export const openApp = {
     'Invitation links expire for security. If the app says yours has expired, ask the sender for a fresh one.',
 }
 
+export const download = {
+  android: 'Download for Android',
+  ios: 'Download for iOS',
+}
+
 export const noApp = {
   title: "Don't have the app yet?",
   description: `${siteConfig.name} is in its test phase — ask for early access and we'll get you set up before the invitation expires.`,

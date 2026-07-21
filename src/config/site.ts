@@ -32,4 +32,9 @@ export const siteConfig = {
     /** Test-phase sign-up form (Google Form) every early-access CTA opens. */
     href: 'https://forms.gle/oBtLxnfLJZXQHVxj8',
   },
+  /** Test-phase app builds: Android via Wormhole, iOS via TestFlight. */
+  appDownloads: {
+    android: 'https://wormhole.app/Ay6dO1#xFGmmvbphT61CVEbJPsCzQ',
+    ios: 'https://testflight.apple.com/join/An8SD64S',
+  },
 } as const
