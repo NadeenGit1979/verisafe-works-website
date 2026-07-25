@@ -3,8 +3,8 @@ import type { LucideIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const sizes = {
-  sm: { tile: 'h-11 w-11', icon: 'h-5 w-5' },
-  md: { tile: 'h-12 w-12', icon: 'h-6 w-6' },
+  sm: { tile: 'h-11 w-11', icon: 'h-7 w-7' },
+  md: { tile: 'h-12 w-12', icon: 'h-8 w-8' },
 } as const
 
 type IconBadgeProps = {
