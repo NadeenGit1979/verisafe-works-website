@@ -14,7 +14,8 @@ export function CheckList({ items, className }: CheckListProps) {
       {items.map((item) => (
         <li key={item} className="flex items-start gap-3">
           <CheckCircle2 className="mt-0.5 h-5 w-5 flex-none text-primary" aria-hidden="true" />
-          <span className="text-sm leading-relaxed text-foreground">{item}</span>
+          {/* text-base matches the intro paragraph above each list. */}
+          <span className="text-base leading-relaxed text-foreground">{item}</span>
         </li>
       ))}
     </ul>

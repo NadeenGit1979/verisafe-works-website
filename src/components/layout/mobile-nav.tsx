@@ -40,8 +40,9 @@ export function MobileNav() {
         {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </button>
 
+      {/* top-20 matches the header's h-20 so the panel hangs off its bottom edge. */}
       {open && (
-        <div className="fixed inset-x-0 top-16 border-t border-border bg-background">
+        <div className="fixed inset-x-0 top-20 border-t border-border bg-background">
           <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4" aria-label="Mobile">
             {MAIN_NAV.map((link) => (
               <NavLink key={link.href} {...link} variant="mobile" onNavigate={close} />

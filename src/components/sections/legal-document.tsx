@@ -82,6 +82,7 @@ export function LegalDocumentBody({ document }: { document: LegalDocument }) {
       </p>
       <div className="mt-10 space-y-12">
         {document.sections.map((section) => (
+          // Clears the sticky header (h-20) plus a little breathing room.
           <section key={section.id} id={section.id} className="scroll-mt-24">
             <h2 className="border-l-4 border-primary pl-4 font-heading text-2xl font-bold tracking-tight text-foreground">
               {section.title}
