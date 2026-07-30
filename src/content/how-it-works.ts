@@ -20,25 +20,25 @@ export const hero = {
 export const flow: Feature[] = [
   {
     icon: FilePlus2,
-    title: '1. Start the job record',
+    title: 'Start the job record',
     description:
       'Create a job in seconds and link the property, the resident and any colleagues or contractors involved. Everyone is added to the same record from the start.',
   },
   {
     icon: Camera,
-    title: '2. Capture documents & images',
+    title: 'Capture documents & images',
     description:
       'Attach quotes, certificates and invoices, and snap before/during/after photos. Each item is timestamped and locked to the job timeline.',
   },
   {
     icon: Mic,
-    title: '3. Record the conversations',
+    title: 'Record the conversations',
     description:
       'Capture audio notes and agreements on site so what was said is never in doubt. Recordings sit alongside the documents and images.',
   },
   {
     icon: Share2,
-    title: '4. Share one identical copy',
+    title: 'Share one identical copy',
     description:
       "When the job closes, the resident, the worker and the worker's employer each hold the exact same record — nothing added, nothing removed.",
   },

@@ -10,8 +10,8 @@ import { siteConfig } from '@/config/site'
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between">
-        <BrandLink />
+      <Container className="flex h-20 items-center justify-between">
+        <BrandLink size="lg" />
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
           {MAIN_NAV.map((link) => (

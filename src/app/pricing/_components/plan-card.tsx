@@ -18,7 +18,7 @@ export function PlanCard({ plan }: { plan: Plan }) {
           Most popular
         </Badge>
       )}
-      <h2 className="font-heading text-xl font-semibold text-foreground">{plan.name}</h2>
+      <h2 className="font-heading text-xl font-bold text-foreground">{plan.name}</h2>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{plan.description}</p>
       <div className="mt-6 flex items-baseline gap-1">
         <span className="font-heading text-4xl font-bold text-foreground">{plan.price}</span>
@@ -28,7 +28,7 @@ export function PlanCard({ plan }: { plan: Plan }) {
         {plan.features.map((feature) => (
           <li key={feature} className="flex items-start gap-3">
             <Check className="mt-0.5 h-5 w-5 flex-none text-primary" aria-hidden="true" />
-            <span className="text-sm leading-relaxed text-foreground">{feature}</span>
+            <span className="text-sm font-medium leading-relaxed text-foreground">{feature}</span>
           </li>
         ))}
       </ul>

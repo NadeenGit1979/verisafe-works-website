@@ -27,7 +27,7 @@ export function NavLink({ href, label, variant = 'desktop', onNavigate }: NavLin
       className={cn(
         variant === 'desktop'
           ? [
-              'rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-foreground',
+              'rounded-md px-3 py-2 text-base font-semibold transition-colors hover:bg-secondary hover:text-foreground',
               isActive ? 'text-primary' : 'text-muted-foreground',
             ]
           : [

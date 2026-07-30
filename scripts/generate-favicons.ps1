@@ -1,6 +1,10 @@
-# One-off asset pipeline: regenerates the favicons from the clean logo mark
-# (public/logo-mark-new.png), cropped to a circle to match how BrandLink
+# One-off asset pipeline: regenerates the favicons from the full-resolution
+# brand master (verisafe-logo.png), cropped to a circle to match how BrandLink
 # renders the mark (rounded-full).
+#
+# This reads the master rather than public/logo-mark-new.png: that file is
+# deliberately downscaled to 128px for the web (it renders at 44px), which is
+# smaller than the 180px apple-icon and would upscale it.
 # Run from the repo root:  powershell -File scripts/generate-favicons.ps1
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
@@ -25,7 +29,7 @@ function Save-CircularIcon([System.Drawing.Bitmap]$src, [string]$path, [int]$siz
 }
 
 $public = Join-Path $PSScriptRoot '..\public'
-$src = New-Object System.Drawing.Bitmap((Join-Path $public 'logo-mark-new.png'))
+$src = New-Object System.Drawing.Bitmap((Join-Path $PSScriptRoot '..\verisafe-logo.png'))
 Save-CircularIcon $src (Join-Path $public 'icon-32x32.png') 32
 Save-CircularIcon $src (Join-Path $public 'apple-icon.png') 180
 $src.Dispose()

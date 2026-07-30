@@ -22,7 +22,13 @@ export default function HowItWorksPage() {
         <Container size="lg" className="py-16 sm:py-20">
           <div className="grid gap-6 md:grid-cols-2">
             {flow.map((step) => (
-              <FeatureCard key={step.title} {...step} className="p-7" />
+              <FeatureCard
+                key={step.title}
+                {...step}
+                orientation="horizontal"
+                size="lg"
+                className="p-7"
+              />
             ))}
           </div>
         </Container>
