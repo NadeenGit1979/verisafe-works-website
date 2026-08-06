@@ -6,6 +6,8 @@ export const ROUTES = {
   howItWorks: '/how-it-works',
   whoItsFor: '/who-its-for',
   pricing: '/pricing',
+  /** Canonical "get the app" destination — every invite email/SMS links here. */
+  download: '/download',
   contact: '/contact',
   privacy: '/privacy',
   terms: '/terms',
@@ -31,6 +33,7 @@ export const FOOTER_NAV: { title: string; links: NavItem[] }[] = [
       { href: ROUTES.howItWorks, label: 'How it works' },
       { href: ROUTES.whoItsFor, label: "Who it's for" },
       { href: ROUTES.pricing, label: 'Pricing' },
+      { href: ROUTES.download, label: 'Download the app' },
     ],
   },
   {

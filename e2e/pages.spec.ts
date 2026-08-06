@@ -5,6 +5,7 @@ const pages = [
   { path: '/how-it-works', slug: 'how-it-works', heading: 'How VeriSafe Works works' },
   { path: '/who-its-for', slug: 'who-its-for', heading: 'Built for everyone on the job' },
   { path: '/pricing', slug: 'pricing', heading: 'Transparent pricing, naturally' },
+  { path: '/download', slug: 'download', heading: 'Get the VeriSafe Works app' },
   { path: '/contact', slug: 'contact', heading: "Let's talk transparency" },
   { path: '/privacy', slug: 'privacy', heading: 'Privacy Policy' },
   { path: '/terms', slug: 'terms', heading: 'Terms & Conditions' },
