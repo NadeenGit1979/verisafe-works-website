@@ -13,6 +13,7 @@ const paths = [
   '/how-it-works',
   '/who-its-for',
   '/pricing',
+  '/download',
   '/contact',
   '/privacy',
   '/terms',

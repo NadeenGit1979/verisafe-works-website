@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation'
 import { AlertTriangle, Download, Smartphone } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
-import { siteConfig } from '@/config/site'
+import { androidApkUrl, siteConfig } from '@/config/site'
 import { download, invalidLink, noApp, openApp } from '@/content/accept-invitation'
 
 /**
@@ -45,10 +45,11 @@ export function InvitationActions() {
       </p>
 
       <div className="mx-auto mt-6 flex max-w-xl flex-wrap justify-center gap-3">
+        {/* Direct APK from our own storage — an invitee who has to install
+            first should not lose the tab, so this downloads in place rather
+            than opening the /download page in a new one. */}
         <Button
-          render={
-            <a href={siteConfig.appDownloads.android} target="_blank" rel="noopener noreferrer" />
-          }
+          render={<a href={androidApkUrl} download="verisafe-works.apk" />}
           variant="outline"
         >
           <Download aria-hidden />
