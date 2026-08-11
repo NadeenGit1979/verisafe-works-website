@@ -27,7 +27,9 @@ export function NavLink({ href, label, variant = 'desktop', onNavigate }: NavLin
       className={cn(
         variant === 'desktop'
           ? [
-              'rounded-md px-3 py-2 text-base font-semibold transition-colors hover:bg-secondary hover:text-foreground',
+              // nowrap so a long label can never silently wrap inside its own
+              // pill — an overflow is a louder, easier-to-catch failure.
+              'whitespace-nowrap rounded-md px-3 py-2 text-base font-semibold transition-colors hover:bg-secondary hover:text-foreground',
               isActive ? 'text-primary' : 'text-muted-foreground',
             ]
           : [

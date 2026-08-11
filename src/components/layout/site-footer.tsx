@@ -11,9 +11,10 @@ export function SiteFooter() {
       <Container className="grid gap-10 py-12 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
         <div className="max-w-xs">
           <BrandLink />
+          {/* Reuses the canonical description rather than maintaining a second,
+              separately-hardcoded tagline that can drift out of sync. */}
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            One shared, Tamper-Proof record of every job — built for tradespeople, maintenance
-            teams and the residents they work for.
+            {siteConfig.description}
           </p>
         </div>
 

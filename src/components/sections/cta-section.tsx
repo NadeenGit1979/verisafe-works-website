@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import type { Route } from 'next'
 
 import { Button } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
@@ -6,8 +7,26 @@ import { ROUTES } from '@/config/navigation'
 import { siteConfig } from '@/config/site'
 import type { CtaContent } from '@/types/content'
 
+type CtaOverride = { label: string; href: Route }
+
+type CtaSectionProps = CtaContent & {
+  /**
+   * Replaces the default "Get early access" external sign-up form with an
+   * internal link — e.g. routing an institutional audience to Contact
+   * instead of the individual-tester funnel.
+   */
+  primaryOverride?: CtaOverride
+  /** Replaces the default "Become a tester" link to Contact with a different internal route. */
+  secondaryOverride?: CtaOverride
+}
+
 /** Closing call-to-action banner rendered at the bottom of every page. */
-export function CtaSection({ title, description }: CtaContent) {
+export function CtaSection({
+  title,
+  description,
+  primaryOverride,
+  secondaryOverride,
+}: CtaSectionProps) {
   return (
     <section>
       <Container className="py-16 sm:py-20">
@@ -19,20 +38,28 @@ export function CtaSection({ title, description }: CtaContent) {
             {description}
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            {primaryOverride ? (
+              <Button render={<Link href={primaryOverride.href} />} size="lg" variant="amber">
+                {primaryOverride.label}
+              </Button>
+            ) : (
+              <Button
+                render={
+                  <a href={siteConfig.cta.href} target="_blank" rel="noopener noreferrer" />
+                }
+                size="lg"
+                variant="amber"
+              >
+                {siteConfig.cta.primary}
+              </Button>
+            )}
             <Button
-              render={<a href={siteConfig.cta.href} target="_blank" rel="noopener noreferrer" />}
-              size="lg"
-              variant="amber"
-            >
-              {siteConfig.cta.primary}
-            </Button>
-            <Button
-              render={<Link href={ROUTES.contact} />}
+              render={<Link href={secondaryOverride?.href ?? ROUTES.contact} />}
               size="lg"
               variant="outline"
               className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10"
             >
-              {siteConfig.cta.secondary}
+              {secondaryOverride?.label ?? siteConfig.cta.secondary}
             </Button>
           </div>
         </div>

@@ -4,12 +4,13 @@ import { expect, test } from '@playwright/test'
  * Layout guarantees that the per-page specs can't catch, because they run at a
  * single viewport. The sticky header is the fragile part: its nav, wordmark and
  * CTA all sit on one row, so growing any of them can silently push the page
- * wider than the viewport. That regressed once already (16px nav type overflowed
- * 768px by 8px), so it is pinned here.
+ * wider than the viewport. That regressed twice already (16px nav type overflowed
+ * 768px by 8px; then a sixth nav item overflowed it by 54px), so it is pinned here.
  */
 
 const paths = [
   '/',
+  '/housing-associations',
   '/how-it-works',
   '/who-its-for',
   '/pricing',
@@ -19,9 +20,10 @@ const paths = [
   '/terms',
 ] as const
 
-// 768px is the tight one — it is where the desktop nav first replaces the
-// hamburger, so the full nav row has the least room it will ever have.
-const widths = [390, 768, 1024, 1440] as const
+// 1280px is the tight one — it is where the desktop nav first replaces the
+// hamburger, so the full nav row has the least room it will ever have. 768 and
+// 1024 stay because they must still show the hamburger.
+const widths = [390, 768, 1024, 1280, 1440] as const
 
 for (const width of widths) {
   test(`no page scrolls horizontally at ${width}px`, async ({ page }) => {
@@ -39,18 +41,40 @@ for (const width of widths) {
   })
 }
 
-test('the desktop nav and hamburger swap over at the md breakpoint', async ({ page }) => {
+test('the desktop nav and hamburger swap over at the xl breakpoint', async ({ page }) => {
   const nav = page.getByRole('navigation', { name: 'Main' })
   const hamburger = page.getByRole('button', { name: 'Open menu' })
 
-  await page.setViewportSize({ width: 768, height: 900 })
+  await page.setViewportSize({ width: 1280, height: 900 })
   await page.goto('/')
   await expect(nav).toBeVisible()
   await expect(hamburger).toBeHidden()
 
-  await page.setViewportSize({ width: 767, height: 900 })
+  await page.setViewportSize({ width: 1279, height: 900 })
   await expect(nav).toBeHidden()
   await expect(hamburger).toBeVisible()
+})
+
+test('the desktop nav stays on one row at every width it is shown', async ({ page }) => {
+  // The overflow test above only catches the nav pushing the *page* wider. A
+  // sixth nav item ("Housing Associations") can instead wrap onto a second row
+  // inside the header, which grows the header rather than the document. Pin the
+  // single-row layout directly by asserting every link shares a top edge.
+  for (const width of [1280, 1440, 1920] as const) {
+    await page.setViewportSize({ width, height: 900 })
+    await page.goto('/')
+
+    const links = page.getByRole('navigation', { name: 'Main' }).getByRole('link')
+    const boxes = await links.evaluateAll((nodes) =>
+      nodes.map((node) => node.getBoundingClientRect().top),
+    )
+
+    expect(boxes.length, `nav should render every item at ${width}px`).toBeGreaterThan(1)
+    const [first] = boxes
+    for (const top of boxes) {
+      expect(Math.abs(top - first), `nav wraps to a second row at ${width}px`).toBeLessThanOrEqual(1)
+    }
+  }
 })
 
 test('the mobile menu panel stays pinned to the header height', async ({ page }) => {

@@ -7,10 +7,12 @@ type PageHeroProps = {
   title: string
   lede: string
   badge?: string
+  /** Optional content rendered below the lede — e.g. call-to-action buttons. */
+  children?: React.ReactNode
 }
 
 /** Shared page-title band used by every subpage. */
-export function PageHero({ title, lede, badge }: PageHeroProps) {
+export function PageHero({ title, lede, badge, children }: PageHeroProps) {
   return (
     <section className="border-b border-border bg-secondary/40">
       <Container size="sm" className="py-16 text-center sm:py-20">
@@ -21,6 +23,7 @@ export function PageHero({ title, lede, badge }: PageHeroProps) {
         <p className="mx-auto mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
           {lede}
         </p>
+        {children}
       </Container>
     </section>
   )

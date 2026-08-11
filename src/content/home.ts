@@ -87,7 +87,7 @@ export const workflowSteps: Step[] = [
     number: '03',
     title: 'Share one truth',
     description:
-      'Customer, worker and employer all hold an identical, Tamper-Proof copy when the job closes.',
+      'Customer, worker and employer all hold an identical, tamper-evident copy when the job closes.',
   },
 ]
 
@@ -106,9 +106,9 @@ export const audiences: Feature[] = [
   },
   {
     icon: Building2,
-    title: 'Maintenance Teams',
+    title: 'Housing Associations',
     description:
-      'Give every operative a consistent way to log work, evidence compliance and keep residents informed.',
+      "Evidence every repair against Awaab's Law and Building Safety Act timescales, with a shared record every operative, contractor and resident can see.",
   },
   {
     icon: Home,
@@ -117,12 +117,6 @@ export const audiences: Feature[] = [
       "See a record of what's been agreed and done in your home; identical to the one held by the people doing the work.",
   },
 ]
-
-export const testimonial = {
-  quote:
-    'When the resident, my team and the landlord all see the same record, the conversation stops being about blame and starts being about the work.',
-  attribution: 'Maintenance Lead, regional housing association',
-}
 
 export const cta: CtaContent = {
   title: 'Build trust on every job',

@@ -2,6 +2,11 @@ import { expect, test } from '@playwright/test'
 
 const pages = [
   { path: '/', slug: 'home', heading: 'One shared record of every job' },
+  {
+    path: '/housing-associations',
+    slug: 'housing-associations',
+    heading: 'Evidence every repair, automatically',
+  },
   { path: '/how-it-works', slug: 'how-it-works', heading: 'How VeriSafe Works works' },
   { path: '/who-its-for', slug: 'who-its-for', heading: 'Built for everyone on the job' },
   { path: '/pricing', slug: 'pricing', heading: 'Transparent pricing, naturally' },
@@ -32,6 +37,7 @@ for (const { path, slug, heading } of pages) {
 
 test('header navigation reaches every page', async ({ page }) => {
   const links = [
+    { label: 'Housing Associations', heading: 'Evidence every repair, automatically' },
     { label: 'How it works', heading: 'How VeriSafe Works works' },
     { label: "Who it's for", heading: 'Built for everyone on the job' },
     { label: 'Pricing', heading: 'Transparent pricing, naturally' },

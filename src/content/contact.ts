@@ -24,7 +24,7 @@ export const otherRole = 'Other'
 export const roles = [
   'Independent Tradesperson',
   'Trades Firm',
-  'Maintenance Provider',
+  'Housing Association',
   'Resident',
   otherRole,
 ]
