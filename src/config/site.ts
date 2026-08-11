@@ -47,9 +47,9 @@ export const siteConfig = {
     /**
      * Bump on every APK upload: shown on /download and busts the CDN cache.
      * Mirror the app's `versionName` (android/app/build.gradle) so a tester
-     * reporting "I'm on 1.0" names something we can actually look up.
+     * reporting "I'm on 1.1" names something we can actually look up.
      */
-    androidVersion: '1.0',
+    androidVersion: '1.1',
     ios: 'https://testflight.apple.com/join/An8SD64S',
   },
 } as const
