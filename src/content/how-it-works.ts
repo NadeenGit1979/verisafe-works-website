@@ -52,7 +52,10 @@ export const guaranteesSection = {
 export const guarantees: Feature[] = [
   {
     icon: Fingerprint,
-    title: 'Tamper-Proof',
+    title: 'Tamper-evident',
+    // ⚠️ Same ahead-of-the-build claim as the Housing Associations trust card —
+    // see the full note in content/housing-associations.ts. Both sentences have
+    // to become true together, before the first HA security questionnaire.
     description:
       'Every entry is fingerprinted and timestamped, so the record can be trusted as a true account.',
   },
@@ -60,7 +63,7 @@ export const guarantees: Feature[] = [
     icon: Users,
     title: 'Shared by all parties',
     description:
-      'Trades, maintenance teams and residents see the identical record — no private versions.',
+      'Trades, housing associations and residents see the identical record — no private versions.',
   },
   {
     icon: Clock,

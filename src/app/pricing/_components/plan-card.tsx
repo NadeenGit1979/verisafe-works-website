@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Check } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
@@ -32,10 +33,20 @@ export function PlanCard({ plan }: { plan: Plan }) {
           </li>
         ))}
       </ul>
-      {/* Test phase: plans cannot be bought yet, so the action stays disabled. */}
-      <Button className="mt-8" variant={plan.featured ? 'default' : 'outline'} disabled>
-        {plan.cta}
-      </Button>
+      {plan.ctaHref ? (
+        <Button
+          render={<Link href={plan.ctaHref} />}
+          className="mt-8"
+          variant={plan.featured ? 'default' : 'outline'}
+        >
+          {plan.cta}
+        </Button>
+      ) : (
+        // Test phase: self-serve plans cannot be bought yet, so the action stays disabled.
+        <Button className="mt-8" variant={plan.featured ? 'default' : 'outline'} disabled>
+          {plan.cta}
+        </Button>
+      )}
     </div>
   )
 }

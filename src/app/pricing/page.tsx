@@ -11,7 +11,7 @@ import { PlanCard } from './_components/plan-card'
 export const metadata: Metadata = {
   title: 'Pricing',
   description:
-    'Simple, transparent pricing for tradespeople, maintenance teams and housing associations.',
+    'Simple, transparent pricing for tradespeople, teams and housing associations.',
 }
 
 export default function PricingPage() {

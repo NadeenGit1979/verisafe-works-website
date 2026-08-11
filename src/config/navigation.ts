@@ -3,6 +3,7 @@ import type { Route } from 'next'
 /** Every internal route, so links never hardcode path strings. */
 export const ROUTES = {
   home: '/',
+  housingAssociations: '/housing-associations',
   howItWorks: '/how-it-works',
   whoItsFor: '/who-its-for',
   pricing: '/pricing',
@@ -20,6 +21,7 @@ export type NavItem = {
 
 export const MAIN_NAV: NavItem[] = [
   { href: ROUTES.home, label: 'Home' },
+  { href: ROUTES.housingAssociations, label: 'Housing Associations' },
   { href: ROUTES.howItWorks, label: 'How it works' },
   { href: ROUTES.whoItsFor, label: "Who it's for" },
   { href: ROUTES.pricing, label: 'Pricing' },
@@ -30,6 +32,7 @@ export const FOOTER_NAV: { title: string; links: NavItem[] }[] = [
   {
     title: 'Product',
     links: [
+      { href: ROUTES.housingAssociations, label: 'Housing Associations' },
       { href: ROUTES.howItWorks, label: 'How it works' },
       { href: ROUTES.whoItsFor, label: "Who it's for" },
       { href: ROUTES.pricing, label: 'Pricing' },

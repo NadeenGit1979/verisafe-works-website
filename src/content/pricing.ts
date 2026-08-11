@@ -1,7 +1,11 @@
+import type { Route } from 'next'
+
+import { ROUTES } from '@/config/navigation'
+
 export const hero = {
-  badge: 'Coming soon',
+  badge: 'Plans coming soon',
   title: 'Transparent pricing, naturally',
-  lede: 'We are in our test phase, so paid plans are not on sale yet. Here is what they will look like at launch — every plan includes the full shared record: documents, images and audio. No hidden fees.',
+  lede: 'We are in our test phase, so paid plans are not on sale yet. Here is what they will look like at launch — every plan includes the full shared record: documents, images and audio. No hidden fees. Housing association pilots are open now.',
 }
 
 export type Plan = {
@@ -12,6 +16,12 @@ export type Plan = {
   features: string[]
   cta: string
   featured: boolean
+  /**
+   * When set, the CTA becomes a live internal link instead of the disabled
+   * "Coming soon" state — e.g. routing enterprise buyers to Contact while
+   * the self-serve tiers stay disabled during the test phase.
+   */
+  ctaHref?: Route
 }
 
 export const plans: Plan[] = [
@@ -47,10 +57,10 @@ export const plans: Plan[] = [
     featured: true,
   },
   {
-    name: 'Maintenance Providers',
+    name: 'Housing Associations',
     price: 'Custom',
     period: '',
-    description: 'For associations managing maintenance at scale.',
+    description: 'For housing associations managing repairs and compliance at scale.',
     features: [
       'Everything in Team',
       'Unlimited members & contractors',
@@ -59,8 +69,9 @@ export const plans: Plan[] = [
       'Single sign-on (SSO)',
       'Dedicated account manager',
     ],
-    cta: 'Coming soon',
+    cta: 'Talk to us about a pilot',
     featured: false,
+    ctaHref: ROUTES.contact,
   },
 ]
 

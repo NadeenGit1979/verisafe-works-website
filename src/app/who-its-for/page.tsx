@@ -11,7 +11,7 @@ import { cta, groups, hero } from '@/content/who-its-for'
 
 export const metadata: Metadata = {
   title: "Who it's for",
-  description: `${siteConfig.name} serves independent tradespeople, housing association maintenance teams and the residents they work for.`,
+  description: `${siteConfig.name} serves independent tradespeople, housing associations and the residents they work for.`,
 }
 
 export default function WhoItsForPage() {
