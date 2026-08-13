@@ -27,11 +27,13 @@ export const launchCountdown: LaunchCountdown = {
   liveLabel: 'The test phase is now open to early testers.',
 }
 
+// Labels are set in their display casing rather than CSS-uppercased, so "HAs"
+// keeps its lowercase plural and doesn't read as the word "has".
 export const stats: Stat[] = [
-  { value: '1 record', label: 'shared by everyone' },
-  { value: '100%', label: 'of job evidence kept' },
-  { value: '0', label: 'he-said-she-said disputes' },
-  { value: '3 roles', label: 'trades, teams & residents' },
+  { value: '1 record', label: 'SHARED BY EVERYONE' },
+  { value: '100%', label: 'OF JOB EVIDENCE KEPT' },
+  { value: '0', label: 'HE-SAID-SHE-SAID DISPUTES' },
+  { value: '3 roles', label: 'HAs, TRADES, RESIDENTS' },
 ]
 
 export const recordSection = {
@@ -41,10 +43,10 @@ export const recordSection = {
 
 export const recordTypes: Feature[] = [
   {
-    icon: FileText,
-    title: 'Every document',
+    icon: AudioLines,
+    title: 'Every conversation',
     description:
-      'Quotes, invoices, certificates, risk assessments and sign-offs stored against the job — never lost.',
+      'Recorded audio notes and agreements kept alongside the job, exactly as they happened.',
   },
   {
     icon: ImageIcon,
@@ -53,10 +55,10 @@ export const recordTypes: Feature[] = [
       'Before, during and after photos timestamped and attached, so the work speaks for itself.',
   },
   {
-    icon: AudioLines,
-    title: 'Every conversation',
+    icon: FileText,
+    title: 'Every document',
     description:
-      'Recorded audio notes and agreements kept alongside the job, exactly as they happened.',
+      'Quotes, invoices, certificates, risk assessments and sign-offs stored against the job — never lost.',
   },
 ]
 
@@ -99,12 +101,6 @@ export const audienceSection = {
 
 export const audiences: Feature[] = [
   {
-    icon: Wrench,
-    title: 'Independent Tradespeople',
-    description:
-      'Protect your reputation with proof of every job and get paid faster with disputes settled by the record.',
-  },
-  {
     icon: Building2,
     title: 'Housing Associations',
     description:
@@ -115,6 +111,12 @@ export const audiences: Feature[] = [
     title: 'Residents',
     description:
       "See a record of what's been agreed and done in your home; identical to the one held by the people doing the work.",
+  },
+  {
+    icon: Wrench,
+    title: 'Independent Tradespeople',
+    description:
+      'Protect your reputation with proof of every job and get paid faster with disputes settled by the record.',
   },
 ]
 

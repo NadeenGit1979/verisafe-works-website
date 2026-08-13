@@ -64,8 +64,12 @@ function Block({ block }: { block: LegalBlock }) {
         </div>
       )
     case 'note':
+      // A notice band, not a card: a hairline amber rule broken by a heavier
+      // lead-in tab, the way a printed statute marks a passage. Square edges and
+      // no left bar — that device belongs to the section headings below.
       return (
-        <aside className="rounded-xl border-l-4 border-accent-amber bg-accent-amber/10 p-4 text-sm leading-relaxed text-foreground">
+        <aside className="relative border-t border-accent-amber/45 bg-accent-amber/[0.08] p-5 leading-relaxed text-foreground">
+          <span aria-hidden className="absolute -top-px left-0 h-1 w-16 bg-accent-amber" />
           {block.text}
         </aside>
       )

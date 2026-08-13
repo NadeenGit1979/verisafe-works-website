@@ -10,7 +10,7 @@ export function HomeStats() {
             <p className="font-heading text-2xl font-bold uppercase text-primary sm:text-3xl">
               {stat.value}
             </p>
-            <p className="mt-1 uppercase tracking-wide text-muted-foreground">{stat.label}</p>
+            <p className="mt-1 tracking-wide text-muted-foreground">{stat.label}</p>
           </div>
         ))}
       </Container>
