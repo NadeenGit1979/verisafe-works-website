@@ -5,7 +5,7 @@ import type { CtaContent, Feature, LaunchCountdown, Stat, Step } from '@/types/c
 export const hero = {
   badge: siteConfig.tagline,
   title: 'One shared record of every job',
-  lede: `${siteConfig.name} keeps a complete, identical record of all documents, images and audio conversations for each job — held by the resident, the worker and, if applicable, the worker's employer.`,
+  lede: `${siteConfig.name} keeps a complete, identical record of all documents, images and audio conversations for each job; held by the resident, the worker and, if applicable the HA.`,
   primaryCta: siteConfig.cta.primary,
   secondaryCta: 'See how it works',
   image: {
@@ -58,7 +58,7 @@ export const recordTypes: Feature[] = [
     icon: FileText,
     title: 'Every document',
     description:
-      'Quotes, invoices, certificates, risk assessments and sign-offs stored against the job — never lost.',
+      'Quotes, invoices, certificates, risk assessments and sign-offs stored against the job. Never lost.',
   },
 ]
 
