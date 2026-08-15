@@ -5,7 +5,7 @@ import type { CtaContent } from '@/types/content'
 
 export const hero = {
   title: 'Built for everyone on the job',
-  lede: 'One shared record means trades, housing associations and residents all work from the same truth — each with the tools and protection they need.',
+  lede: 'One shared record means trades, housing associations and residents all work from the same truth; each with the tools and protection they need.',
 }
 
 export type AudienceGroup = {
@@ -23,10 +23,9 @@ export const groups: AudienceGroup[] = [
     intro:
       'Give everyone working on your stock a consistent way to log work, evidence compliance and keep residents fully informed',
     benefits: [
-      'Standardise how every job is updated, recorded and viewed; internally and by the resident,
+      'Standardise how every job is updated, recorded and viewed; internally and by the resident',
       "Evidence Awaab's Law and Building Safety Act compliance in one place",
       'Give your residents a voice, with the option to raise issues directly in the live job record',
-      'Reduce complaints with a shared, transparent record',
       'Be audit-ready with a complete, sealed history of every job',
     ],
     image: {
