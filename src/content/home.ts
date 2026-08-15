@@ -44,7 +44,7 @@ export const recordSection = {
 export const recordTypes: Feature[] = [
   {
     icon: AudioLines,
-    title: 'Every conversation',
+    title: 'Every interaction',
     description:
       'Recorded audio notes and agreements kept alongside the job, exactly as they happened.',
   },
@@ -89,13 +89,13 @@ export const workflowSteps: Step[] = [
     number: '03',
     title: 'Share one truth',
     description:
-      'Customer, worker and employer all hold an identical, tamper-evident copy when the job closes.',
+      'Customer, worker and employer all hold an identical, tamper-evident copy of the job, updated in real time.',
   },
 ]
 
 export const audienceSection = {
   eyebrow: 'Built for everyone on the job',
-  title: 'One platform, three points of view',
+  title: 'Three points of view; One shared record',
   cta: 'See who benefits',
 }
 
