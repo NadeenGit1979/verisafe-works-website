@@ -23,10 +23,11 @@ export const groups: AudienceGroup[] = [
     intro:
       'Give everyone working on your stock a consistent way to log work, evidence compliance and keep residents fully informed.',
     benefits: [
-      'Standardise how every job is updated, recorded and viewed; internally and for the resident,
+      'Standardise how every job is updated, recorded and viewed; internally and by the resident,
       "Evidence Awaab's Law and Building Safety Act compliance in one place",
+      'Give your residents a voice, with the option to raise issues directly in the live job record'
       'Reduce complaints with a shared, transparent record',
-      'Hand over a complete history when contractors change',
+      'Be audit-ready with a complete, sealed history of every job',
     ],
     image: {
       src: '/images/app-record.png',
