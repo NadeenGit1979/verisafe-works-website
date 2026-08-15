@@ -18,6 +18,23 @@ export type AudienceGroup = {
 
 export const groups: AudienceGroup[] = [
   {
+      icon: Building2,
+    title: 'Housing Associations',
+    intro:
+      'Give everyone working on your stock a consistent way to log work, evidence compliance and keep residents fully informed.',
+    benefits: [
+      'Standardise how every job is recorded across your team and every contractor',
+      "Evidence Awaab's Law and Building Safety Act compliance in one place",
+      'Reduce complaints with a shared, transparent record',
+      'Hand over a complete history when contractors change',
+    ],
+    image: {
+      src: '/images/app-record.png',
+      alt: `A job record shown in the ${siteConfig.name} app`,
+    },
+  },
+  {  
+    
     icon: Wrench,
     title: 'Independent Tradespeople',
     intro: `Your reputation is your business. ${siteConfig.name} gives you proof of exactly what was agreed and done on every job.`,
@@ -33,22 +50,7 @@ export const groups: AudienceGroup[] = [
     },
   },
   {
-    icon: Building2,
-    title: 'Housing Associations',
-    intro:
-      'Give everyone working on your stock a consistent way to log work, evidence compliance and keep residents fully informed.',
-    benefits: [
-      'Standardise how every job is recorded across your team and every contractor',
-      "Evidence Awaab's Law and Building Safety Act compliance in one place",
-      'Reduce complaints with a shared, transparent record',
-      'Hand over a complete history when contractors change',
-    ],
-    image: {
-      src: '/images/app-record.png',
-      alt: `A job record shown in the ${siteConfig.name} app`,
-    },
-  },
-  {
+
     icon: Home,
     title: 'Residents',
     intro:
