@@ -1,3 +1,4 @@
+import type { Route } from 'next'
 import type { LucideIcon } from 'lucide-react'
 
 /** An icon-led card or list entry (feature grids, trust guarantees, audiences). */
@@ -5,6 +6,29 @@ export type Feature = {
   icon: LucideIcon
   title: string
   description: string
+}
+
+/** A `Feature` whose card links onward to a dedicated page. */
+export type LinkedFeature = Feature & {
+  href: Route
+  /** Visible label for the onward link, e.g. 'For Trades'. */
+  linkLabel: string
+}
+
+/**
+ * One cell of the /who-its-for visibility matrix. `note` qualifies a cell that
+ * is neither a flat yes nor a flat no — e.g. 'When you are a party'.
+ */
+export type Visibility = {
+  shown: boolean
+  note?: string
+}
+
+/** One row of the visibility matrix — one thing in the record, seen per role. */
+export type VisibilityRow = {
+  label: string
+  /** One cell per role, in the same order as the matrix's `roles`. */
+  cells: Visibility[]
 }
 
 /** A numbered step in a workflow list. */

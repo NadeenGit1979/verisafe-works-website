@@ -7,6 +7,12 @@ const pages = [
     slug: 'housing-associations',
     heading: 'Evidence every repair, automatically',
   },
+  { path: '/trades', slug: 'trades', heading: 'Proof of every job, built in' },
+  {
+    path: '/residents',
+    slug: 'residents',
+    heading: "Your home's record, held by you too",
+  },
   { path: '/how-it-works', slug: 'how-it-works', heading: 'How VeriSafe Works works' },
   { path: '/who-its-for', slug: 'who-its-for', heading: 'Built for everyone on the job' },
   { path: '/pricing', slug: 'pricing', heading: 'Transparent pricing, naturally' },
@@ -38,8 +44,9 @@ for (const { path, slug, heading } of pages) {
 test('header navigation reaches every page', async ({ page }) => {
   const links = [
     { label: 'Housing Associations', heading: 'Evidence every repair, automatically' },
+    { label: 'Trades', heading: 'Proof of every job, built in' },
+    { label: 'Residents', heading: "Your home's record, held by you too" },
     { label: 'How it works', heading: 'How VeriSafe Works works' },
-    { label: "Who it's for", heading: 'Built for everyone on the job' },
     { label: 'Pricing', heading: 'Transparent pricing, naturally' },
     { label: 'Contact', heading: "Let's talk transparency" },
   ]

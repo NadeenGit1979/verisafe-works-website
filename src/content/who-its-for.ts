@@ -1,70 +1,77 @@
 import { Building2, Home, Wrench } from 'lucide-react'
-import type { LucideIcon } from 'lucide-react'
+
+import { ROUTES } from '@/config/navigation'
 import { siteConfig } from '@/config/site'
-import type { CtaContent } from '@/types/content'
+import type { CtaContent, LinkedFeature, VisibilityRow } from '@/types/content'
 
 export const hero = {
   title: 'Built for everyone on the job',
   lede: 'One shared record means trades, housing associations and residents all work from the same truth; each with the tools and protection they need.',
 }
 
-export type AudienceGroup = {
-  icon: LucideIcon
-  title: string
-  intro: string
-  benefits: string[]
-  image: { src: string; alt: string }
-}
-
-export const groups: AudienceGroup[] = [
+/**
+ * The hub cards. Order matches MAIN_NAV and the homepage audience grid — the
+ * three audiences appear in the same sequence everywhere on the site.
+ */
+export const audiences: LinkedFeature[] = [
   {
-      icon: Building2,
+    icon: Building2,
     title: 'Housing Associations',
-    intro:
-      'Give everyone working on your stock a consistent way to log work, evidence compliance and keep residents fully informed',
-    benefits: [
-      'Standardise how every job is updated, recorded and viewed; internally and by the resident',
-      "Evidence Awaab's Law and Building Safety Act compliance in one place",
-      'Give your residents a voice, with the option to raise issues directly in the live job record',
-      'Be audit-ready with a complete, sealed history of every job',
-    ],
-    image: {
-      src: '/images/app-record.png',
-      alt: `A job record shown in the ${siteConfig.name} app`,
-    },
-  },
-  {  
-    
-    icon: Wrench,
-    title: 'Independent Tradespeople',
-    intro: `Your reputation is your business. ${siteConfig.name} gives you proof of exactly what was agreed and done on every job.`,
-    benefits: [
-      'Evidence every job with photos, documents and audio',
-      'Settle disputes with the record, not your word against theirs',
-      'Get paid faster with clear, signed-off work',
-      'Build a portfolio of trusted, transparent jobs',
-    ],
-    image: {
-      src: '/images/hero-tradesperson.png',
-      alt: 'A tradesperson reviewing a job on a phone',
-    },
+    description:
+      'Give everyone working on your stock a consistent way to log work, evidence compliance and keep residents fully informed.',
+    href: ROUTES.housingAssociations,
+    linkLabel: 'For Housing Associations',
   },
   {
-
+    icon: Wrench,
+    title: 'Trades',
+    description: `Your reputation is your business. ${siteConfig.name} gives you proof of exactly what was agreed and done on every job.`,
+    href: ROUTES.trades,
+    linkLabel: 'For Trades',
+  },
+  {
     icon: Home,
     title: 'Residents',
-    intro:
+    description:
       'Know exactly what is happening in your home. You hold the same record as the people working for you.',
-    benefits: [
-      'See what was agreed before work begins',
-      'Have agreed job changes documented in real time',
-      'Keep a personal copy of every job in your home',
-      'Resolve issues quickly with a clear, identical timeline',
-    ],
-    image: {
-      src: '/images/resident.png',
-      alt: 'A resident welcoming a maintenance worker at their door',
-    },
+    href: ROUTES.residents,
+    linkLabel: 'For Residents',
+  },
+]
+
+export const visibilitySection = {
+  eyebrow: 'Who sees what',
+  title: 'Identical on the job, different around it',
+  lede: 'Every party holds the same job record. What changes is the wider view each role needs — and what stays private.',
+}
+
+/** Column headers of the visibility matrix, in `visibilityRows` cell order. */
+export const roles: string[] = ['Housing associations', 'Trades', 'Residents']
+
+export const visibilityRows: VisibilityRow[] = [
+  {
+    label: 'The job timeline, as it happens',
+    cells: [{ shown: true }, { shown: true }, { shown: true }],
+  },
+  {
+    label: 'Documents, photos and audio',
+    cells: [{ shown: true }, { shown: true }, { shown: true }],
+  },
+  {
+    label: 'The written summary and sign-off',
+    cells: [{ shown: true }, { shown: true }, { shown: true }],
+  },
+  {
+    label: 'Internal notes between a housing association and its contractors',
+    cells: [{ shown: true }, { shown: true, note: 'When you are a party' }, { shown: false }],
+  },
+  {
+    label: 'Compliance and audit reporting across a whole portfolio',
+    cells: [{ shown: true }, { shown: false }, { shown: false }],
+  },
+  {
+    label: 'A portfolio of your own jobs across every customer',
+    cells: [{ shown: false }, { shown: true }, { shown: false }],
   },
 ]
 

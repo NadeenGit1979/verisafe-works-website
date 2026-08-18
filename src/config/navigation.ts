@@ -4,6 +4,8 @@ import type { Route } from 'next'
 export const ROUTES = {
   home: '/',
   housingAssociations: '/housing-associations',
+  trades: '/trades',
+  residents: '/residents',
   howItWorks: '/how-it-works',
   whoItsFor: '/who-its-for',
   pricing: '/pricing',
@@ -19,11 +21,17 @@ export type NavItem = {
   label: string
 }
 
+/**
+ * The three audiences lead, in the same order everywhere they appear (nav,
+ * homepage cards, /who-its-for hub) so the site reads as one map. "Home" is
+ * left out on purpose — the wordmark carries it, and the row has no slack:
+ * see the single-row assertion in e2e/responsive.spec.ts.
+ */
 export const MAIN_NAV: NavItem[] = [
-  { href: ROUTES.home, label: 'Home' },
   { href: ROUTES.housingAssociations, label: 'Housing Associations' },
+  { href: ROUTES.trades, label: 'Trades' },
+  { href: ROUTES.residents, label: 'Residents' },
   { href: ROUTES.howItWorks, label: 'How it works' },
-  { href: ROUTES.whoItsFor, label: "Who it's for" },
   { href: ROUTES.pricing, label: 'Pricing' },
   { href: ROUTES.contact, label: 'Contact' },
 ]
@@ -33,6 +41,8 @@ export const FOOTER_NAV: { title: string; links: NavItem[] }[] = [
     title: 'Product',
     links: [
       { href: ROUTES.housingAssociations, label: 'Housing Associations' },
+      { href: ROUTES.trades, label: 'Trades' },
+      { href: ROUTES.residents, label: 'Residents' },
       { href: ROUTES.howItWorks, label: 'How it works' },
       { href: ROUTES.whoItsFor, label: "Who it's for" },
       { href: ROUTES.pricing, label: 'Pricing' },

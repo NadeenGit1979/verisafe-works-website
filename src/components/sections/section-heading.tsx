@@ -7,19 +7,25 @@ type SectionHeadingProps = {
   lede?: string
   eyebrow?: string
   eyebrowIcon?: LucideIcon
+  /**
+   * 'center' opens a full-width section; 'start' is for a heading that shares
+   * a row with something else, e.g. the audience benefit bands.
+   */
+  align?: 'center' | 'start'
   className?: string
 }
 
-/** Centered h2 + optional eyebrow and lede that opens every content section. */
+/** h2 + optional eyebrow and lede that opens every content section. */
 export function SectionHeading({
   title,
   lede,
   eyebrow,
   eyebrowIcon: EyebrowIcon,
+  align = 'center',
   className,
 }: SectionHeadingProps) {
   return (
-    <div className={cn('mx-auto max-w-2xl text-center', className)}>
+    <div className={cn('max-w-2xl', align === 'center' && 'mx-auto text-center', className)}>
       {eyebrow && (
         <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-primary">
           {EyebrowIcon && <EyebrowIcon className="h-4 w-4" aria-hidden="true" />}
