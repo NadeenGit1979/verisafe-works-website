@@ -55,6 +55,7 @@ export const benefits: string[] = [
   'Timestamped evidence of every hazard report, investigation and repair, ready for a compliance audit',
   'A written summary and sign-off attached to the job the moment it happens — not reconstructed later from memory',
   'One shared timeline across your own operatives and any contractors working on your stock',
+  'Give your residents a voice, with the option to raise issues directly in the live job record',
   'A complete history that transfers cleanly if a contractor or management arrangement changes',
 ]
 

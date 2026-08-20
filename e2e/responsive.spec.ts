@@ -11,6 +11,8 @@ import { expect, test } from '@playwright/test'
 const paths = [
   '/',
   '/housing-associations',
+  '/trades',
+  '/residents',
   '/how-it-works',
   '/who-its-for',
   '/pricing',

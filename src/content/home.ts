@@ -1,6 +1,14 @@
 import { AudioLines, Building2, FileText, Home, ImageIcon, Wrench } from 'lucide-react'
+import { ROUTES } from '@/config/navigation'
 import { siteConfig } from '@/config/site'
-import type { CtaContent, Feature, LaunchCountdown, Stat, Step } from '@/types/content'
+import type {
+  CtaContent,
+  Feature,
+  LaunchCountdown,
+  LinkedFeature,
+  Stat,
+  Step,
+} from '@/types/content'
 
 export const hero = {
   badge: siteConfig.tagline,
@@ -99,24 +107,30 @@ export const audienceSection = {
   cta: 'See who benefits',
 }
 
-export const audiences: Feature[] = [
+export const audiences: LinkedFeature[] = [
   {
     icon: Building2,
     title: 'Housing Associations',
     description:
       "Evidence every repair against Awaab's Law and Building Safety Act timescales, with a shared record every operative, contractor and resident can see.",
+    href: ROUTES.housingAssociations,
+    linkLabel: 'For Housing Associations',
+  },
+  {
+    icon: Wrench,
+    title: 'Trades',
+    description:
+      'Protect your reputation with proof of every job and get paid faster with disputes settled by the record.',
+    href: ROUTES.trades,
+    linkLabel: 'For Trades',
   },
   {
     icon: Home,
     title: 'Residents',
     description:
       "See a record of what's been agreed and done in your home; identical to the one held by the people doing the work.",
-  },
-  {
-    icon: Wrench,
-    title: 'Independent Tradespeople',
-    description:
-      'Protect your reputation with proof of every job and get paid faster with disputes settled by the record.',
+    href: ROUTES.residents,
+    linkLabel: 'For Residents',
   },
 ]
 
