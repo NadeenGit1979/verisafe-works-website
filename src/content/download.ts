@@ -42,6 +42,9 @@ export const iosCard = {
 export const androidSteps = {
   title: 'Installing on Android',
   steps: [
+    // Only while phones still carry 1.3 or older: those can't be updated in place to 1.4+, and
+    // Android's only explanation is "App not installed". Drop this step once they're gone.
+    `Already have ${siteConfig.name} on this phone? Uninstall it first — this version can’t install over older copies, and Android would only say “App not installed”.`,
     'Tap Download for Android above — the APK saves to your Downloads.',
     'Chrome asks you to confirm the file type. Choose Download anyway.',
     'Open the downloaded file. Android asks permission to install from this source — allow it, then tap Install.',
