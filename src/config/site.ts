@@ -49,7 +49,7 @@ export const siteConfig = {
      * Mirror the app's `versionName` (android/app/build.gradle) so a tester
      * reporting "I'm on 1.2" names something we can actually look up.
      */
-    androidVersion: '1.4',
+    androidVersion: '1.5',
     ios: 'https://testflight.apple.com/join/An8SD64S',
   },
 } as const
